@@ -85,7 +85,7 @@
   <div class="grid3" style="margin-top:34px;">
     <div class="card"><h3>Entity linking that understands finance</h3><p>Cashtags, aliases and guarded ambiguous names: "Dow" is not Dow Jones, "Merck KGaA" is not Merck, an apple pie is not Apple. Clause targeting gives "Apple beats, while Tesla misses" <b>+0.71</b> and <b>−0.93</b>.</p></div>
     <div class="card"><h3>Stories, not articles</h3><p>MinHash clustering counts syndicated copies once and turns breadth of coverage and novelty into features; a relevance gate keeps general news honest.</p></div>
-    <div class="card"><h3>Student over zero-shot</h3><p>FinBERT fine-tuned on 12.8k finance tweets: macro-F1 <b>0.95 vs 0.48</b> for zero-shot on held-out data. Hybrid keeps zero-shot for classes without data; a Groq-hosted LLM teacher fills them.</p></div>
+    <div class="card"><h3>Student over zero-shot</h3><p>FinBERT fine-tuned on 12.8k finance tweets: macro-F1 <b>0.94 vs 0.48</b> for zero-shot on de-duplicated held-out tweets; on news the gain is smaller (0.54 vs 0.49). Hybrid keeps zero-shot for classes without data; a Groq-hosted LLM teacher fills them.</p></div>
     <div class="card"><h3>Data where it was hard</h3><p>GDELT's 15-minute GKG files (the search API throttles), SEC 8-K item codes as free event labels, 145k FNSPID articles range-fetched from a 23 GB file (6% downloaded).</p></div>
     <div class="card"><h3>Portfolio construction</h3><p>Sentiment views sized by Grinold's rule (α = IC × σ × score) inside Black-Litterman, Ledoit-Wolf risk, long-only, 2% ex-ante TE, no-trade band.</p></div>
     <div class="card"><h3>Bank-grade stress engine</h3><p>Vasicek conditional PDs, IFRS 9 stage 2 lifetime ECL, Basel IRB RWA, revolver drawdowns, ALM-hedged rate book, factor attribution and reverse stress testing.</p></div>
@@ -140,7 +140,7 @@
     <div class="card">
       <h3>Limitations</h3>
       <ul>
-        <li>The impact score is validated but modest; on the Ukraine replay invasion day scored 6, one short of the stress trigger</li>
+        <li>The impact score ranks stock moves only weakly (ρ 0.059); on the Ukraine replay invasion day scored 6, one short of the stress trigger</li>
         <li>Student validation is in-domain (tweets); transfer to news is what the 875-item gold set will measure</li>
         <li>Historical text is date-stamped, forcing next-day trading in backtests</li>
         <li>The banking book is synthetic; credit-factor shocks are expert-set, market moves are calibrated</li>

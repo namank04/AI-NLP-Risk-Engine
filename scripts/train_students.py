@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -30,6 +31,11 @@ def onehot(classes: list[str]) -> list[float]:
     return [1.0 if c in classes else 0.0 for c in CLASSES]
 
 
+def _key(text: str) -> str:
+    # tweets are often re-posted with a new link or number; compare on the letters only
+    return re.sub(r"[^a-z ]", "", re.sub(r"https?://\S+|\s+", " ", text.lower()))[:80].strip()
+
+
 def public_data():
     from datasets import load_dataset
 
@@ -39,6 +45,10 @@ def public_data():
         rows = [(r["text"], onehot([TOPIC_MAP[r["label"]]] if TOPIC_MAP[r["label"]] else []))
                 for r in ds[split] if r["label"] in TOPIC_MAP]
         out[split] = rows
+    seen = {_key(t) for t, _ in out["train"]}
+    clean = [r for r in out["validation"] if _key(r[0]) not in seen]
+    out["leaked"] = len(out["validation"]) - len(clean)
+    out["validation"] = clean
     return out
 
 
@@ -80,6 +90,32 @@ def macro_f1(y: np.ndarray, p: np.ndarray) -> tuple[float, dict]:
     return float(np.mean(list(per.values()))), per
 
 
+def news_check() -> dict | None:
+    """Out-of-domain check: gold-pool news items labelled by the LLM teacher (not human gold)."""
+    from riskengine.gold import POOL, _read_jsonl
+    from riskengine.nlp.events import EventClassifier
+    from riskengine.teacher.llm import CACHE
+
+    if not CACHE.exists():
+        return None
+    pool = {p["item_id"]: p for p in _read_jsonl(POOL)}
+    lab = {}
+    for line in CACHE.read_text(encoding="utf-8").splitlines():
+        r = json.loads(line)
+        if r.get("pass") == 0 and r.get("label") and r["item_id"] in pool:
+            lab[r["item_id"]] = [e for e in r["label"]["events"] if e != "none"]
+    if not lab:
+        return None
+    ids = sorted(lab)
+    texts = [f"{pool[i]['title']}. {pool[i].get('body', '')}".strip(". ")[:600] for i in ids]
+    y = np.array([onehot(lab[i]) for i in ids])
+    out = {"items": len(ids), "labels": "LLM teacher"}
+    for name, student in (("hybrid_with_student", True), ("zero_shot", False)):
+        preds = EventClassifier(student=student, batch_size=4).classify(texts)
+        out[f"{name}_macro_f1"] = round(macro_f1(y, np.array([onehot([c for c in p.labels if c != "none"]) for p in preds]))[0], 4)
+    return out
+
+
 def baseline_predict(texts: list[str]) -> np.ndarray:
     from riskengine.nlp.events import EventClassifier
 
@@ -108,7 +144,8 @@ def main() -> None:
     silver = silver_data()
     train = pub["train"] + silver
     val = pub["validation"]
-    print(f"train {len(train):,} (public {len(pub['train']):,} + silver {len(silver):,}), validation {len(val):,}")
+    print(f"train {len(train):,} (public {len(pub['train']):,} + silver {len(silver):,}), validation {len(val):,} "
+          f"({pub['leaked']} dropped as duplicates of training tweets)")
 
     base = "ProsusAI/finbert"
     tok = AutoTokenizer.from_pretrained(base)
@@ -167,7 +204,8 @@ def main() -> None:
     gc.collect()
     base_f1, base_per = macro_f1(y, baseline_predict([t for t, _ in val]))
     adopt = stud_f1 > base_f1
-    res = {"validation_items": len(val), "train_items": len(train), "silver_items": len(silver),
+    res = {"validation_items": len(val), "validation_dropped_as_duplicates": pub["leaked"],
+           "train_items": len(train), "silver_items": len(silver),
            "student_macro_f1": round(stud_f1, 4), "baseline_macro_f1": round(base_f1, 4),
            "student_per_class": stud_per, "baseline_per_class": base_per, "adopted": adopt}
     # classes the student actually saw positives for; the engine keeps zero-shot for the rest
@@ -179,6 +217,7 @@ def main() -> None:
     (OUT / "ADOPTED").unlink(missing_ok=True)
     if adopt:
         (OUT / "ADOPTED").write_text("student beat the zero-shot baseline on held-out validation\n")
+        res["news_check"] = news_check()
     (PROCESSED_DIR / "student_event_eval.json").write_text(json.dumps(res, indent=2), encoding="utf-8")
     print(json.dumps(res, indent=2))
 

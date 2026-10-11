@@ -14,7 +14,7 @@ import logging
 import threading
 import time
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import UTC, datetime, timedelta
 
 import pandas as pd
 
@@ -32,6 +32,7 @@ TOPIC_SIGNALS = "signals"
 TOPIC_INDEX = "index"
 TOPIC_STRESS = "stress"
 TOPIC_STATUS = "status"
+LIVE = "live"
 
 
 def load_replay(name: str) -> list[RawItem]:
@@ -135,6 +136,51 @@ class EngineService:
                                                daemon=True)
         self._replay_thread.start()
         return self.replay
+
+    def start_live(self, poll_s: float = 300.0, lookback: timedelta = timedelta(hours=1), sources=None) -> ReplayStatus:
+        """Poll GDELT (15-minute files) and SEC EDGAR 8-Ks and push new items through the engine."""
+        self.stop_replay()
+        self.index.as_of(datetime.now(UTC))
+        self.replay = ReplayStatus(running=True, name=LIVE, speed=1.0)
+        self._stop.clear()
+        self._replay_thread = threading.Thread(target=self._run_live, args=(poll_s, lookback, sources), daemon=True)
+        self._replay_thread.start()
+        return self.replay
+
+    def _run_live(self, poll_s: float, lookback: timedelta, sources) -> None:
+        if sources is None:
+            from riskengine.ingest.edgar import EdgarSource
+            from riskengine.ingest.gdelt import GdeltGkgSource
+
+            sources = [GdeltGkgSource(), EdgarSource()]
+        since = datetime.now(UTC) - lookback
+        seen: set[str] = set()
+        try:
+            _ = self.engine
+            while not self._stop.is_set():
+                polled = datetime.now(UTC)
+                items: list[RawItem] = []
+                for src in sources:
+                    try:
+                        items += src.fetch(since)
+                    except Exception:
+                        log.exception("live fetch failed: %s", type(src).__name__)
+                fresh = sorted((i for i in items if i.item_id not in seen), key=lambda i: i.published_at)
+                seen.update(i.item_id for i in fresh)
+                sigs = self.ingest(fresh)
+                self.replay.processed += len(fresh)
+                self.replay.total = self.replay.processed
+                self.replay.signals += len(sigs)
+                self.replay.sim_time = polled.isoformat()
+                self.bus.publish(TOPIC_STATUS, self.replay.__dict__.copy())
+                # GDELT posts each file ~15 minutes after its slot: overlap the window, dedupe by id
+                since = polled - timedelta(minutes=45)
+                self._stop.wait(poll_s)
+        except Exception:
+            log.exception("live feed failed")
+        finally:
+            self.replay.running = False
+            self.bus.publish(TOPIC_STATUS, self.replay.__dict__.copy())
 
     def stop_replay(self) -> None:
         self._stop.set()

@@ -21,6 +21,7 @@ const NAV = [
 ]
 
 export const REPLAY_NAMES: Record<string, string> = {
+  live: 'Live now · GDELT + SEC',
   recent: 'Last 48 hours',
   svb_2023: 'SVB collapse · Mar 2023',
   ukraine_2022: 'Russia–Ukraine · Feb 2022',
@@ -71,7 +72,7 @@ function Transport() {
       </button>
       <div className="hidden w-[132px] text-right lg:block">
         <div className="tnum text-xs text-ink-2">{status?.sim_time ? when(status.sim_time) : busy ? 'loading models…' : 'idle'}</div>
-        <div className="tnum text-[11px] text-ink-3">{status?.total ? `${status.processed.toLocaleString()} / ${status.total.toLocaleString()}` : ''}</div>
+        <div className="tnum text-[11px] text-ink-3">{status?.name === 'live' ? `${status?.processed.toLocaleString()} items polled` : status?.total ? `${status.processed.toLocaleString()} / ${status.total.toLocaleString()}` : ''}</div>
       </div>
     </div>
   )

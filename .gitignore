@@ -18,3 +18,4 @@ frontend/node_modules/
 frontend/dist/
 data/processed/signals_*/
 data/processed/teacher_cache.jsonl
+*.egg-info/

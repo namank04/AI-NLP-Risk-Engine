@@ -113,7 +113,7 @@ function Node({ x, y, w = 170, h = 46, title, sub, accent }: { x: number; y: num
 
 function Pipeline() {
   const src = [['GDELT news', '15-minute global feed'], ['SEC EDGAR 8-K', 'material corporate events'], ['FNSPID', 'financial news, 2009–2023'], ['Stock tweets', 'social chatter']]
-  const nlp = [['Entity sentiment', 'FinBERT, clause-targeted', 34], ['Event classification', '10 classes · student + NLI', 127], ['Impact 1–10', 'validated by event study', 220]] as const
+  const nlp = [['Entity sentiment', 'FinBERT, clause-targeted', 34], ['Event classification', '10 classes · student + NLI', 127], ['Impact 1–10', 'tested by event study', 220]] as const
   const paths = [
     ...src.map((_, i) => `M190,${43 + i * 70} C235,${43 + i * 70} 235,150 280,150`),
     ...nlp.map(([, , y]) => `M450,150 C495,150 495,${y + 23} 540,${y + 23}`),
@@ -202,7 +202,7 @@ export default function Overview() {
           <motion.p initial={STATIC ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.16, ease: EASE }}
             className="mt-6 max-w-xl text-[17px] leading-relaxed text-ink-2">
             Signal Risk reads news, SEC filings and social posts, scores every company they mention, and streams the result into a
-            sentiment-driven index and a bank stress test, minutes after the story breaks.
+            sentiment-driven index and a bank stress test, live from GDELT and the SEC or replayed through past crises.
           </motion.p>
           <motion.div initial={STATIC ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.24, ease: EASE }}
             className="mt-8 flex flex-wrap items-center gap-3">
