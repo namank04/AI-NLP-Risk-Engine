@@ -73,6 +73,7 @@ class EventClassifier:
         self.threshold = threshold
         self.batch_size = batch_size
         self.lexicon = [(c, st, re.compile(p, re.I)) for c, st, p in LEXICON]
+        self.conflict = next(pat for c, st, pat in self.lexicon if st == "armed_conflict")
         self.student = (STUDENT_DIR / "ADOPTED").exists() if student is None else student
         self.covered: list[str] = []
         if self.student:
@@ -145,9 +146,14 @@ class EventClassifier:
                 if cls:
                     probs[cls] = max(probs[cls], EDGAR_P)
             labels = [c for c, p in sorted(probs.items(), key=lambda kv: -kv[1]) if p >= self.threshold]
+            # explicit evidence of armed conflict or credit distress dominates the model's ranking
+            if "geopolitical" in labels and self.conflict.search(text):
+                subtypes["geopolitical"] = "armed_conflict"
+                labels.remove("geopolitical")
+                labels.insert(0, "geopolitical")
             if "credit_event" in lexicon_hits and "credit_event" in labels:
                 labels.remove("credit_event")
-                labels.insert(0, "credit_event")   # explicit credit evidence dominates
+                labels.insert(0, "credit_event")
             probs["none"] = float(1.0 - max(probs.values())) if probs else 1.0
             primary = labels[0] if labels else "none"
             out.append(EventClassification(

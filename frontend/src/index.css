@@ -1,0 +1,241 @@
+@import 'tailwindcss';
+
+/*
+  Design tokens. One dark theme, tuned for long reading sessions:
+  - surfaces step up in lightness; borders are hairlines, never heavy outlines
+  - data colours come from a validated categorical order (see lib/theme.ts);
+    status colours are reserved for compliance states and always ship with an icon
+*/
+@theme {
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --color-page: #0b0e13;
+  --color-panel: #11151c;
+  --color-raised: #171c25;
+  --color-hover: #1d2330;
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.14);
+
+  --color-ink: #eef1f5;
+  --color-ink-2: #aab2bf;
+  --color-ink-3: #6f7886;
+
+  --color-accent: #3987e5;
+  --color-accent-soft: rgb(57 135 229 / 0.14);
+  --color-up: #3987e5;      /* diverging: positive pole */
+  --color-down: #e66767;    /* diverging: negative pole */
+
+  --color-good: #0ca30c;
+  --color-warning: #fab219;
+  --color-serious: #ec835a;
+  --color-critical: #d03b3b;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-page);
+  overflow-x: hidden;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* tabular figures only where numbers align in columns */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: rgb(57 135 229 / 0.35);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #262d3a;
+  border: 3px solid var(--color-page);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@keyframes arrive {
+  from {
+    background-color: rgb(57 135 229 / 0.14);
+    transform: translateY(-6px);
+    opacity: 0;
+  }
+  30% {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+.arrive {
+  animation: arrive 1.8s ease-out;
+}
+
+/* page backdrop: two slow light fields over a fading dot grid */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--color-page);
+}
+.backdrop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 30%, transparent 75%);
+}
+.backdrop i {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.22;
+  animation: drift 38s ease-in-out infinite alternate;
+}
+.backdrop i:nth-child(1) {
+  width: 46vw;
+  height: 34vw;
+  left: -8vw;
+  top: -16vw;
+  background: #2a6fd0;
+}
+.backdrop i:nth-child(2) {
+  width: 38vw;
+  height: 30vw;
+  right: -10vw;
+  top: -10vw;
+  background: #127a68;
+  opacity: 0.16;
+  animation-duration: 46s;
+  animation-direction: alternate-reverse;
+}
+@keyframes drift {
+  to {
+    transform: translate3d(8vw, 5vw, 0) scale(1.15);
+  }
+}
+
+/* cursor spotlight on panels (position set from JS) */
+.spot {
+  position: relative;
+}
+.spot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(57 135 229 / 0.07), transparent 60%);
+}
+.spot:hover::after {
+  opacity: 1;
+}
+
+/* headline tape */
+.tape {
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.tape > div {
+  animation: tape var(--tape-s, 80s) linear infinite;
+}
+.tape:hover > div {
+  animation-play-state: paused;
+}
+@keyframes tape {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* screen-edge flash when a stress test fires */
+.alarm {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  animation: alarm 1.6s ease-out forwards;
+}
+@keyframes alarm {
+  0% {
+    box-shadow: inset 0 0 0 0 rgb(208 59 59 / 0);
+  }
+  20% {
+    box-shadow: inset 0 0 120px 10px rgb(208 59 59 / 0.35);
+  }
+  100% {
+    box-shadow: inset 0 0 0 0 rgb(208 59 59 / 0);
+  }
+}
+
+.live-dot {
+  position: relative;
+}
+.live-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: inherit;
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.flow {
+  stroke-dasharray: 4 8;
+  animation: flow 1.2s linear infinite;
+}
+@keyframes flow {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+html.static .arrive,
+html.static .tape > div {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrive,
+  .backdrop i,
+  .tape > div,
+  .alarm,
+  .live-dot::after,
+  .flow {
+    animation: none;
+  }
+}

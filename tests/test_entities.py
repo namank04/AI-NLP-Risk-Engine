@@ -100,3 +100,13 @@ def test_tricky_new_aliases():
     assert "MRK" in tickers(lk.link("Merck shares jump after Keytruda trial success"))
     assert "AMT" not in tickers(lk.link("Congress debates AMT changes for corporate taxpayers"))
     assert "AMT" in tickers(lk.link("American Tower raises dividend after strong quarter"))
+
+
+def test_armed_conflict_outranks_macro():
+    from riskengine.nlp.events import EventClassifier
+
+    ec = EventClassifier(use_zero_shot=False, student=False)
+    war = ec.classify(["Russian troops begin full-scale invasion of Ukraine; oil and inflation fears grip markets"])[0]
+    assert war.primary == "geopolitical" and war.subtype == "armed_conflict"
+    both = ec.classify(["U.S. imposes sanctions on Russian banks after the invasion of Ukraine"])[0]
+    assert both.primary == "geopolitical" and both.subtype == "armed_conflict"

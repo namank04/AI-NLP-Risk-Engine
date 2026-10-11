@@ -19,7 +19,8 @@ export function themed(o: EChartsOption): EChartsOption {
   return {
     backgroundColor: 'transparent',
     animation: !STATIC,
-    animationDuration: 400,
+    animationDuration: 700,
+    animationEasing: 'cubicOut',
     textStyle: { fontFamily: 'system-ui, -apple-system, Segoe UI, sans-serif', color: INK.secondary },
     grid: { left: 8, right: 16, top: 16, bottom: 8, containLabel: true },
     ...o,
@@ -38,9 +39,9 @@ export function themed(o: EChartsOption): EChartsOption {
   }
 }
 
-export function Chart({ option, height = 260, onClick }: { option: EChartsOption; height?: number; onClick?: (p: unknown) => void }) {
+export function Chart({ option, height = 260, onClick, merge }: { option: EChartsOption; height?: number; onClick?: (p: unknown) => void; merge?: boolean }) {
   return (
-    <ReactECharts option={themed(option)} style={{ height, width: '100%' }} notMerge lazyUpdate
+    <ReactECharts option={themed(option)} style={{ height, width: '100%' }} notMerge={!merge} lazyUpdate
       onEvents={onClick ? { click: onClick } : undefined} opts={{ renderer: 'canvas' }} />
   )
 }
