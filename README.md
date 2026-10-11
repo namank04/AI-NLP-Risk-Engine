@@ -103,7 +103,7 @@ src/riskengine/
   modules/    index/ (Module A), stress/ (Module B)
   market/     prices, FRED, event study
   api/        FastAPI app
-tests/        67 pytest tests
+tests/        69 pytest tests
 ```
 
 ---
@@ -183,7 +183,7 @@ Finance. The replay streams, bank book, backtest and evaluation outputs are alre
 ### Optional
 
 ```bash
-python -m pytest                           # 67 tests
+python -m pytest                           # 69 tests
 python scripts/train_students.py           # event student (~5 min on a GPU); used automatically once trained
 cp .env.example .env                       # add a free Groq key, then:
 python scripts/run_teacher.py gold         # LLM teacher labels; resumes daily within the free quota
