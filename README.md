@@ -117,7 +117,7 @@ rebuild steps: [data/README.md](data/README.md).
 |---|---|
 | **GDELT 2.0 GKG** (15-minute global news files) | Live news (polled every 5 minutes in live mode) and crisis replays |
 | **SEC EDGAR 8-K filings** | Item codes act as authoritative event labels (e.g. 2.04 debt acceleration) |
-| **FNSPID** (`Zihan1004/FNSPID`) | Ticker-tagged financial news, 2009–2023; backtest and gold set |
+| **FNSPID** ([Dong, Fan & Peng, 2024](https://arxiv.org/abs/2402.06698)) | Ticker-tagged financial news, 2009–2023; backtest and gold set. Dataset licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/); see [data attribution](data/README.md#fnspid-attribution-and-reuse). |
 | **Stock tweets** (`mjw/stock_market_tweets`) | Social-media source |
 | **twitter-financial-news-topic** | Public labelled data for the event student |
 | **yfinance, FRED** | Prices for the event study and backtest; rates, credit spreads, VIX, oil for scenario calibration |

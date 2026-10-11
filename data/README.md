@@ -12,13 +12,28 @@ files committed here are small derived samples that let the dashboard and tests 
 |---|---|---|---|
 | [GDELT 2.0 GKG](https://www.gdeltproject.org/) | Global online news every 15 minutes: page title, URL, tone, themes | raw `*.gkg.csv.zip` files, no key | open, free for any use with attribution |
 | [SEC EDGAR](https://www.sec.gov/edgar) | 8-K filings with item codes and press-release exhibits | `data.sec.gov` JSON, no key (User-Agent required) | US public domain |
-| [FNSPID](https://huggingface.co/datasets/Zihan1004/FNSPID) | Ticker-tagged financial news articles and headlines, 2009-2023 | Hugging Face, HTTP range requests | research dataset, see its card |
+| [FNSPID](https://huggingface.co/datasets/Zihan1004/FNSPID) | Ticker-tagged financial news articles and headlines, 2009-2023 | Hugging Face, HTTP range requests | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/); noncommercial use and attribution required |
 | [Stock market tweets](https://huggingface.co/datasets/mjw/stock_market_tweets) | 1.7M tweets on large-cap tickers, 2015-2019 | Hugging Face | Apache-2.0 |
 | [Yahoo Finance via yfinance](https://pypi.org/project/yfinance/) | Daily adjusted prices, shares outstanding, FX | public endpoints | personal / research use |
 | [FRED](https://fred.stlouisfed.org/) | Treasury yields, Moody's Baa/Aaa, ICE BofA OAS (recent years only), VIX, Brent | `fredgraph.csv`, no key | public |
 
 Pretrained models (downloaded on first run, not committed): `ProsusAI/finbert`,
 `MoritzLaurer/deberta-v3-base-zeroshot-v2.0`.
+
+### FNSPID attribution and reuse
+
+FNSPID was created by **Zihan Dong, Xinyu Fan, and Zhiyuan Peng**, *FNSPID: A
+Comprehensive Financial News Dataset in Time Series* (2024),
+[arXiv:2402.06698](https://arxiv.org/abs/2402.06698). The
+[dataset card](https://huggingface.co/datasets/Zihan1004/FNSPID) publishes it under
+[Creative Commons Attribution-NonCommercial 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+The FNSPID-derived samples in this repository were filtered by ticker and date,
+deduplicated, combined with other public sources for crisis replays, and transformed
+into model signals for research and demonstration. This attribution does not imply
+endorsement by the dataset authors. The repository's MIT license covers original
+project code; it does **not** replace the FNSPID dataset's license or any rights in
+individual news articles, whose original publishers are identified where available.
+Do not treat these samples as licensed for commercial reuse.
 
 ## Committed files
 
