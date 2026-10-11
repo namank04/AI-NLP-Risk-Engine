@@ -1,0 +1,32 @@
+{
+  "validation_items": 3105,
+  "train_items": 12821,
+  "silver_items": 0,
+  "student_macro_f1": 0.9451,
+  "baseline_macro_f1": 0.4846,
+  "student_per_class": {
+    "geopolitical": 0.9388,
+    "macroeconomic": 0.9394,
+    "merger_acquisition": 0.9177,
+    "earnings": 0.9757,
+    "regulatory_legal": 0.9304,
+    "management_change": 0.9683
+  },
+  "baseline_per_class": {
+    "geopolitical": 0.1406,
+    "macroeconomic": 0.5597,
+    "merger_acquisition": 0.704,
+    "earnings": 0.6004,
+    "regulatory_legal": 0.6432,
+    "management_change": 0.2595
+  },
+  "adopted": true,
+  "covered_classes": [
+    "geopolitical",
+    "macroeconomic",
+    "merger_acquisition",
+    "earnings",
+    "regulatory_legal",
+    "management_change"
+  ]
+}
