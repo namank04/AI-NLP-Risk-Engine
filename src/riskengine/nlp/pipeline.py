@@ -38,11 +38,13 @@ class RiskEngine:
         self.events = EventClassifier(use_zero_shot=self.cfg.use_zero_shot, threshold=self.cfg.event_threshold)
         self.tax = taxonomy()
 
-    def process(self, items: list[RawItem]) -> list[Signal]:
+    def process(self, items: list[RawItem], clusterer: StoryClusterer | None = None) -> list[Signal]:
+        """clusterer: story memory to use; defaults to the engine's shared one."""
+        clusterer = clusterer or self.clusterer
         items = sorted(items, key=lambda i: i.published_at)
         prepared = []
         for item in items:
-            cl = self.clusterer.assign(item)
+            cl = clusterer.assign(item)
             if cl.is_duplicate and self.cfg.drop_duplicates:
                 continue
             text = item.text

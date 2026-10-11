@@ -213,21 +213,48 @@ portfolio under explicit risk limits.
 
 ## 6. Limitations & Next Steps
 
-- **Impact is the weakest link.** It ranks stock moves only weakly (ρ = 0.059). On the Ukraine replay the invasion day
-  scored 6, just under the trigger of 7, so the first systemic run came on 27 February. Next: richer event features
-  from LLM-teacher labels distilled into student models, measured on the 875-item gold set.
-- **Event classes without public training data.** Credit, operational and product events still use zero-shot NLI plus
-  lexicons. The Groq teacher (`scripts/run_teacher.py silver`) adds silver labels within the free tier's daily quota,
-  then `scripts/train_students.py` retrains.
-- **Historical timing.** Date-only timestamps force next-day trading in backtests, where news is already priced. Live
-  mode uses 15-minute GDELT timestamps, but the backtest cannot measure performance at that speed.
-- **Live mode is a prototype.** It polls GDELT and EDGAR every 5 minutes in a single process on a laptop; GDELT itself
-  publishes each 15-minute file with a lag, so signals arrive roughly 15–30 minutes after publication. It is not
-  deployed or monitored as a service.
-- **Synthetic book.** Exposures, ratings and LGDs are generated. Scenario market moves are calibrated to history;
-  credit-factor shocks and revolver drawdowns are expert-set.
-- **Next:** hosted deployment, more sources (earnings-call transcripts, central-bank speeches), and intraday prices to
-  test the signal at the speed it is produced.
+This is a working prototype. The results above are preliminary and should be read with these limits in mind.
+
+**Signals (NLP)**
+- **Impact is a heuristic, not a calibrated probability.** It is a transparent formula (event base severity × sentiment
+  strength × novelty × outlet count × source credibility), rounded to 1–10. Against realised abnormal returns it ranks
+  only weakly (ρ = 0.059). On the Ukraine replay the invasion day scored 6, one short of the trigger.
+- **Impact → scenario severity is a policy choice.** Severity = (impact − 4) / 6, clipped to 20–100%. It is a tunable
+  setting for the risk team, not an estimated relationship between a news score and real losses.
+- **Event accuracy on news is preliminary.** 0.94 macro-F1 is on finance tweets (six classes, our topic mapping). On
+  news the only check so far is 120 items labelled by an LLM teacher, not humans (0.54 vs 0.49 zero-shot). Credit,
+  operational and product events rely on zero-shot NLI plus keyword rules, and those rules can override the model.
+- **Entity attribution can leak.** When a sentence naming two companies cannot be split into clauses, both receive
+  the whole sentence's sentiment.
+- **Lexicon-based context.** Source credibility is a fixed table, and country, sector and commodity scope is detected
+  from mentions, not causality or exposure. Outlets are counted by publisher name, so syndicated copies of one wire
+  story count as separate outlets.
+
+**Modules**
+- **The bank is a scenario simulator, not a validated capital model.** The book is synthetic, CET1 is set to start at
+  13.5%, and credit-factor shocks, revolver drawdowns and parts of market and operational risk capital are simplified or
+  expert-set. Scenario market moves are calibrated to history.
+- **The tracking-error limit is ex-ante.** The optimiser enforces 2% against an estimated covariance; held weights can
+  exceed it slightly while the no-trade band applies (up to 2.2%), and realised TE was 2.1%.
+- **Index fallback.** Without market data the index uses equal weights and a simple tilt with no risk model; the
+  Index page then shows a degraded-mode warning.
+- **Historical timing.** Date-only timestamps force next-day trading in backtests, where news is already priced, so the
+  backtest cannot measure performance at the 15-minute speed of live mode.
+
+**System**
+- **Live mode is a laptop prototype.** It polls GDELT and EDGAR every 5 minutes; signals arrive roughly 15–30 minutes
+  after publication. Its record of processed items is in memory, so a restart can replay the last hour into the
+  modules.
+- **Local use only.** The API has open CORS and no authentication on stress-run and labelling routes; both need
+  restricting before any public deployment.
+
+**Next steps:**
+- a human-labelled news test set covering every event class;
+- silver labels for the missing classes, then retrain;
+- calibrating impact against losses;
+- restart-safe ingestion;
+- authentication and hosting;
+- intraday prices for a latency-aware backtest.
 
 ---
 

@@ -75,12 +75,13 @@ class Snapshot:
     ex_ante_te: float | None = None
     alpha_bps: dict[str, float] = field(default_factory=dict)
     trigger_signal_ids: list[str] = field(default_factory=list)
+    degraded: str | None = None
 
     def to_dict(self) -> dict:
         return {"ts": self.ts.isoformat(), "weights": self.weights, "benchmark": self.benchmark,
                 "signals": self.signals, "turnover": self.turnover, "reason": self.reason, "method": self.method,
                 "ex_ante_te": self.ex_ante_te, "alpha_bps": self.alpha_bps,
-                "trigger_signal_ids": self.trigger_signal_ids}
+                "trigger_signal_ids": self.trigger_signal_ids, "degraded": self.degraded}
 
 
 class IndexRebalancer:
@@ -118,6 +119,13 @@ class IndexRebalancer:
     @property
     def method(self) -> str:
         return self.cfg.method if (self.cfg.method != "black_litterman" or self.cov is not None) else "exp_tilt"
+
+    @property
+    def degraded(self) -> str | None:
+        if self.cov is not None:
+            return None
+        return ("Market data unavailable: equal-weight benchmark and a simple sentiment tilt, "
+                "with no risk model or tracking-error limit")
 
     # ---- construction -------------------------------------------------------------
     def target_weights(self, sig_state: dict[str, dict]) -> tuple[pd.Series, dict[str, float]]:
@@ -169,7 +177,7 @@ class IndexRebalancer:
                         signals={k: {kk: round(float(vv), 4) for kk, vv in v.items()} for k, v in state.items()},
                         turnover=round(turnover, 6), reason=reason, method=self.method,
                         ex_ante_te=None if te is None else round(te, 5), alpha_bps=alpha,
-                        trigger_signal_ids=self._pending[-20:])
+                        trigger_signal_ids=self._pending[-20:], degraded=self.degraded)
         self._pending = []
         self.history.append(snap)
         for fn in self.listeners:

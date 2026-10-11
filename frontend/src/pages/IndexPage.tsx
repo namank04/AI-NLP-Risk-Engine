@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import clsx from 'clsx'
+import { AlertTriangle } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { api } from '../api/client'
 import type { IndexSnapshot } from '../api/types'
@@ -177,6 +178,12 @@ export default function IndexPage() {
   return (
     <>
       <PageTitle title="Index">Module A · sentiment-tilted index over 20 S&amp;P 100 names</PageTitle>
+      {last?.degraded && (
+        <div role="alert" className="mb-6 flex items-start gap-3 rounded-2xl border border-warning/40 bg-warning/10 px-5 py-3.5 text-[13px] text-ink">
+          <AlertTriangle size={16} className="mt-0.5 shrink-0 text-warning" aria-hidden />
+          <span><b>Degraded mode.</b> {last.degraded}. Weights below are not the Black-Litterman portfolio.</span>
+        </div>
+      )}
       <div className="mb-6 rounded-2xl border border-line bg-panel px-6 py-6">
         <Hero label="Active share against the cap-weighted benchmark" value={last ? <Counter value={100 * activeShare} format={(v) => `${v.toFixed(1)}%`} /> : '—'}
           detail={last ? <>{last.method === 'black_litterman' ? 'Black-Litterman with Grinold-sized views' : 'Exponential tilt'} ·

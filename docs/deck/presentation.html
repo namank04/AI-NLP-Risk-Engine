@@ -140,16 +140,16 @@
     <div class="card">
       <h3>Limitations</h3>
       <ul>
-        <li>The impact score ranks stock moves only weakly (ρ 0.059); on the Ukraine replay invasion day scored 6, one short of the stress trigger</li>
-        <li>Student validation is in-domain (tweets); transfer to news is what the 875-item gold set will measure</li>
-        <li>Historical text is date-stamped, forcing next-day trading in backtests</li>
-        <li>The banking book is synthetic; credit-factor shocks are expert-set, market moves are calibrated</li>
+        <li>Impact is a heuristic score; it ranks stock moves only weakly (ρ 0.059), and its mapping to scenario severity is a policy choice</li>
+        <li>Event accuracy on news is preliminary: 0.94 F1 on tweets, 0.54 vs 0.49 on 120 LLM-labelled news items</li>
+        <li>The bank is a scenario simulator: synthetic book, expert-set credit shocks, market moves calibrated</li>
+        <li>Backtests trade next day on date-stamped text; live mode is a single-process prototype</li>
       </ul>
     </div>
     <div class="card">
       <h3>Next steps</h3>
       <ul>
-        <li>Finish the gold set and score baseline, teacher and student on news</li>
+        <li>Human-labelled news test set covering every event class</li>
         <li>Silver labels from the Groq-hosted teacher for credit and operational events; retrain the student</li>
         <li>Retrain the impact model on the improved event features</li>
         <li>Intraday timestamps for a latency-aware backtest; second-round contagion in Module B</li>

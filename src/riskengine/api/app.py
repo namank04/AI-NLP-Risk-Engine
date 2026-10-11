@@ -96,15 +96,10 @@ def analyze(req: AnalyzeRequest):
     if req.store:
         sigs = s.ingest([item])
     else:
-        # score without touching shared story-cluster state
+        # own story memory, so a running replay or live feed is never affected
         from riskengine.nlp.dedup import StoryClusterer
 
-        eng = s.engine
-        saved, eng.clusterer = eng.clusterer, StoryClusterer()
-        try:
-            sigs = eng.process([item])
-        finally:
-            eng.clusterer = saved
+        sigs = s.engine.process([item], clusterer=StoryClusterer())
     return [x.model_dump(mode="json") for x in sigs]
 
 
