@@ -1,13 +1,4 @@
-"""Event classification baseline (multi-label over config/taxonomy.yaml).
-
-Three evidence layers, combined by taking the max probability per class:
-  1. SEC 8-K item codes          authoritative, p = 0.95
-  2. finance keyword lexicon     precise phrases ("Chapter 11", "beats estimates")
-  3. zero-shot NLI               every class hypothesis scored independently
-
-"none" is chosen when no real class clears `threshold`. The fine-tuned student
-model (Stage 4) replaces layer 3; layers 1-2 stay as high-precision overrides.
-"""
+"""Event classification baseline (multi-label over config/taxonomy.yaml)."""
 
 from __future__ import annotations
 
@@ -144,7 +135,8 @@ class EventClassifier:
         for i, text in enumerate(texts):
             probs = {c: float(zs[i, j]) for j, c in enumerate(self.classes)}
             subtypes: dict[str, str] = {}
-            for cls, (p, st) in self._lexicon(text).items():
+            lexicon_hits = self._lexicon(text)
+            for cls, (p, st) in lexicon_hits.items():
                 if p > probs[cls]:
                     probs[cls] = p
                 subtypes.setdefault(cls, st)
@@ -153,6 +145,9 @@ class EventClassifier:
                 if cls:
                     probs[cls] = max(probs[cls], EDGAR_P)
             labels = [c for c, p in sorted(probs.items(), key=lambda kv: -kv[1]) if p >= self.threshold]
+            if "credit_event" in lexicon_hits and "credit_event" in labels:
+                labels.remove("credit_event")
+                labels.insert(0, "credit_event")   # explicit credit evidence dominates
             probs["none"] = float(1.0 - max(probs.values())) if probs else 1.0
             primary = labels[0] if labels else "none"
             out.append(EventClassification(

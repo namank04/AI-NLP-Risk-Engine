@@ -1,22 +1,10 @@
-"""Run the LLM teacher (Groq free tier by default; set LLM_API_KEY in .env).
-
-  python scripts/run_teacher.py --ping                 check the key and model
-  python scripts/run_teacher.py gold                   label the gold pool (for teacher evaluation)
-  python scripts/run_teacher.py silver --n 3000        label a training sample for the students
-
-Items are sent in batches (--batch, default 8) so the instructions are paid for once
-per request. Labels are cached; when the provider's daily quota is reached the run
-stops and the next run resumes where it left off.
-
-Silver items come from the training period only (before 2023-07-01, the impact
-model's test start), exclude every gold item, and oversample rare event classes
-using the baseline engine's predictions.
-"""
+"""Run the LLM teacher (Groq free tier by default; set LLM_API_KEY in .env)."""
 
 from __future__ import annotations
 
 import argparse
 import sys
+import time
 from pathlib import Path
 
 import pandas as pd
@@ -83,7 +71,16 @@ def main() -> None:
     done = 0
     try:
         for k in range(0, len(todo), args.batch):
-            labels = teacher.label_batch(todo[k:k + args.batch])
+            for _attempt in range(3):
+                try:
+                    labels = teacher.label_batch(todo[k:k + args.batch])
+                    break
+                except DailyLimitReached:
+                    raise
+                except RuntimeError:
+                    time.sleep(60)          # per-minute token limit: wait for the window to reset
+            else:
+                continue
             done += sum(lab is not None for lab in labels)
             print(f"\r  {k + len(labels)}/{len(todo)} sent, {done} usable labels", end="", flush=True)
     except DailyLimitReached as exc:

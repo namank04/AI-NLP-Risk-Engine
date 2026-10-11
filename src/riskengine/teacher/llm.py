@@ -1,18 +1,4 @@
-"""LLM teacher over any OpenAI-compatible chat endpoint.
-
-Works with a free hosted tier (default: Groq) or a local Ollama server; configure
-with LLM_BASE_URL / LLM_API_KEY / LLM_MODEL (see .env.example). No paid API is needed.
-
-The teacher labels exactly what a human labels in the gold set (per-entity
-relevance + 5-point sentiment, multi-label event classes, subtype), following
-docs/labeling_guidelines.md, so its quality can be measured against the gold
-set before its labels are used to train students.
-
-Free tiers cap tokens per day, so `label_batch` packs several items into one
-request (the instructions are sent once), and a daily-quota response stops the
-run cleanly. Every label is cached in data/processed/teacher_cache.jsonl keyed by
-(model, prompt version, item, pass), so runs resume where they stopped.
-"""
+"""LLM teacher over any OpenAI-compatible chat endpoint."""
 
 from __future__ import annotations
 
@@ -69,7 +55,7 @@ def _system_prompt() -> str:
 class TeacherConfig:
     base_url: str = field(default_factory=lambda: os.environ.get("LLM_BASE_URL", "https://api.groq.com/openai/v1"))
     api_key: str = field(default_factory=lambda: os.environ.get("LLM_API_KEY", ""))
-    model: str = field(default_factory=lambda: os.environ.get("LLM_MODEL", "llama-3.3-70b-versatile"))
+    model: str = field(default_factory=lambda: os.environ.get("LLM_MODEL", "openai/gpt-oss-120b"))
     temperature: float = 0.0
     max_tokens: int = 400
     concurrency: int = 1
@@ -162,6 +148,8 @@ class Teacher:
         body = {"model": self.cfg.model, "temperature": temperature, "max_tokens": max_tokens or self.cfg.max_tokens,
                 "messages": [{"role": "system", "content": self.system}, {"role": "user", "content": user}],
                 "response_format": {"type": "json_object"}}
+        if "gpt-oss" in self.cfg.model:
+            body["reasoning_effort"] = "low"
         for attempt in range(6):
             self._throttle()
             try:
@@ -176,6 +164,9 @@ class Teacher:
                     raise DailyLimitReached(r.text[:300])
                 wait = float(r.headers.get("retry-after", 0) or 0) or min(60, 5 * 2 ** attempt)
                 time.sleep(min(wait, 120))
+                continue
+            if r.status_code == 400 and "json_validate_failed" in r.text:
+                body["max_tokens"] = int(body["max_tokens"] * 2)
                 continue
             if r.status_code >= 500:
                 time.sleep(min(60, 5 * 2 ** attempt))
@@ -224,7 +215,7 @@ class Teacher:
         user = ("Label each item below independently. Return JSON of the form "
                 '{"items": [{"item": 1, "entities": [...], "events": [...], "subtype": ...}, ...]} '
                 f"with exactly {len(todo)} entries, one per item, in order.{NL}{NL}" + (NL + NL).join(parts))
-        raw = self._chat(user, self.cfg.temperature if pass_no == 0 else 0.7, max_tokens=120 * len(todo) + 100)
+        raw = self._chat(user, self.cfg.temperature if pass_no == 0 else 0.7, max_tokens=250 * len(todo) + 800)
         items = parse_batch(raw)
         for n, i in enumerate(todo, 1):
             item_id, _, ents = rows[i]

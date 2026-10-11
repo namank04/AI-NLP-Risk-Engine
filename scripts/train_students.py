@@ -1,16 +1,5 @@
 """Train the event-classification student and compare it with the zero-shot baseline.
 
-Training data
-  public   zeroshot/twitter-financial-news-topic (~17k finance tweets), its 20 topics
-           mapped onto the engine taxonomy; ambiguous topics are dropped, not forced
-  silver   LLM-teacher labels (scripts/run_teacher.py silver), used when present;
-           gold items are never trained on
-Model      ProsusAI/finbert encoder + fresh multi-label head (9 event classes;
-           "none" = no class above threshold), fine-tuned in bf16 on the GPU
-Decision   evaluated on the held-out validation tweets (and the gold set once it is
-           labeled) against the current zero-shot + lexicon classifier; the engine
-           loads the student only if it is better (models/students/event/ADOPTED)
-
 Usage: python scripts/train_students.py [--epochs 3]
 """
 

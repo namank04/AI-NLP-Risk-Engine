@@ -78,34 +78,46 @@ Key assumptions:
 
 ## 4. Quickstart & Installation
 
-Runtime: Python 3.11-3.13, Node 20, on Windows 11 (also works on Linux/macOS). An NVIDIA GPU is optional.
+Runtime: **Python 3.11-3.13** and **Node.js 20.19+** (tested: Python 3.13, Node 20, Windows 11).
+A GPU is optional; on CPU the engine is slower, so use the 1h/s or 6h/s replay speed.
 
 ```bash
-git clone <your-repo-url>
-cd <repo-folder>
-python -m venv .venv && .venv/Scripts/activate        # Linux/macOS: source .venv/bin/activate
-pip install torch --index-url https://download.pytorch.org/whl/cu128   # or .../whl/cpu
-pip install -r requirements.txt && pip install -e .
+git clone https://github.com/namank04/AI-NLP-Risk-Engine.git
+cd AI-NLP-Risk-Engine
 
-# backend (downloads NLP models on first run, ~1.5 GB)
+python -m venv .venv
+.venv\Scripts\activate                    # macOS/Linux: source .venv/bin/activate
+pip install torch --index-url https://download.pytorch.org/whl/cpu      # NVIDIA GPU: .../whl/cu128
+pip install -r requirements.txt
+pip install -e .
+
 uvicorn riskengine.api.app:app --port 8000
-
-# frontend, in a second terminal
-cd frontend && npm install && npm run dev            # open http://localhost:5173
 ```
 
-In the dashboard, pick a replay (e.g. **SVB collapse · Mar 2023**) and press play. Signals stream into the
-Signal Desk, Module A rebalances, and Module B runs stress tests on qualifying events; the Stress page can also
-run any scenario manually.
-
-Rebuilding data (optional):
+In a second terminal:
 
 ```bash
-python scripts/data_audit.py                          # historical datasets + coverage report
-python scripts/build_replays.py recent svb_2023       # replay streams for the demo
-python scripts/build_gold_pool.py                     # gold labeling pool
-python -m pytest                                      # tests
+cd frontend
+npm install
+npm run dev                               # open http://localhost:5173
 ```
+
+Pick a replay in the header (e.g. **SVB collapse · Mar 2023**) and press play: signals stream into the Desk, the
+index rebalances (Index) and qualifying events trigger stress tests (Stress); any scenario can also be run by hand.
+
+First start downloads the NLP models from Hugging Face (~1.5 GB) and daily prices from Yahoo Finance; the replay
+streams, synthetic bank book, backtest and evaluation results are in the repository, so nothing else is needed.
+
+Optional:
+
+```bash
+python -m pytest                          # 65 tests
+python scripts/train_students.py          # event student (~5 min on a GPU); the engine uses it once trained
+cp .env.example .env                      # add a free Groq key, then:
+python scripts/run_teacher.py gold        # LLM teacher labels; resumes daily within the free quota
+```
+
+Rebuilding the data from source is documented in [data/README.md](data/README.md).
 
 ### Dashboard
 
