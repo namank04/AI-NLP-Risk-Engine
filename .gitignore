@@ -1,0 +1,20 @@
+# environments and caches
+.venv/
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.env
+
+# large or regenerable data (small samples under data/ ARE committed)
+data/raw/
+data/*.duckdb
+data/*.duckdb.wal
+models/
+
+# frontend
+frontend/node_modules/
+frontend/dist/
+data/processed/signals_*/
+data/processed/teacher_cache.jsonl
