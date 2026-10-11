@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Signal Risk · Naman Karwa · IIT Guwahati</title>
+<style>
+  @page { size: 1600px 900px; margin: 0; }
+  :root {
+    --page: #0b0e13; --panel: #11151c; --line: rgba(255,255,255,.09);
+    --ink: #eef1f5; --ink2: #aab2bf; --ink3: #6f7886; --accent: #3987e5; --neg: #e66767; --good: #0ca30c; --warn: #fab219;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--page); color: var(--ink); font-family: "Segoe UI", system-ui, -apple-system, sans-serif; }
+  .slide { width: 1600px; height: 900px; padding: 64px 80px; position: relative; overflow: hidden; page-break-after: always; break-after: page; }
+  .slide:last-child { page-break-after: auto; }
+  .kicker { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  h1 { font-size: 64px; line-height: 1.05; margin: 18px 0 0; letter-spacing: -.02em; font-weight: 650; }
+  h2 { font-size: 40px; margin: 10px 0 0; letter-spacing: -.01em; font-weight: 640; }
+  p, li { color: var(--ink2); font-size: 22px; line-height: 1.5; }
+  b { color: var(--ink); font-weight: 600; }
+  .foot { position: absolute; left: 80px; right: 80px; bottom: 36px; display: flex; justify-content: space-between; font-size: 14px; color: var(--ink3); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 24px 28px; }
+  .card h3 { margin: 0 0 8px; font-size: 22px; font-weight: 620; }
+  .card p { margin: 0; font-size: 18px; }
+  .big { font-size: 44px; font-weight: 650; letter-spacing: -.02em; color: var(--ink); line-height: 1; }
+  .label { font-size: 15px; color: var(--ink3); margin-top: 8px; }
+  .shot { border-radius: 14px; border: 1px solid var(--line); display: block; }
+  ul { margin: 0; padding-left: 22px; } li { margin: 6px 0; }
+  .pill { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-size: 15px; color: var(--ink2); margin: 0 6px 6px 0; }
+  .results .card { padding: 16px 22px; } .results .label { font-size: 14px; margin-top: 6px; }
+  .bar { height: 10px; border-radius: 6px; background: #1b2a42; margin-top: 10px; } .bar > i { display: block; height: 10px; border-radius: 6px; background: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- 1 · Title -->
+<section class="slide" style="display:flex;flex-direction:column;justify-content:center;">
+  <div class="kicker">S&amp;P Global &amp; Crisil Campus Hackathon 2026 · AI/NLP Financial Risk Engine</div>
+  <h1 style="font-size:96px;margin-top:28px;">Signal Risk</h1>
+  <p style="font-size:30px;max-width:1150px;margin-top:22px;color:var(--ink2)">From unstructured news, filings and posts to structured risk signals, and from those signals to an index that rebalances on sentiment and a bank that stress-tests itself when the world changes.</p>
+  <div style="margin-top:56px;display:flex;gap:56px;">
+    <div><div class="label" style="margin:0">Candidate</div><div style="font-size:28px;font-weight:600;margin-top:6px">Naman Karwa</div></div>
+    <div><div class="label" style="margin:0">College</div><div style="font-size:28px;font-weight:600;margin-top:6px">IIT Guwahati</div></div>
+    <div><div class="label" style="margin:0">Modules built</div><div style="font-size:28px;font-weight:600;margin-top:6px">Engine · A · B</div></div>
+  </div>
+  <div class="foot"><span>Signal Risk</span><span>1 / 7</span></div>
+</section>
+
+<!-- 2 · Problem & approach -->
+<section class="slide">
+  <div class="kicker">Problem &amp; approach</div>
+  <h2>Markets move on text long before it becomes data</h2>
+  <div class="grid2" style="margin-top:36px;">
+    <div>
+      <p>A sanctions headline, a downgrade, a bank run: risk teams read them hours or days before the information reaches structured feeds and the next scheduled stress test.</p>
+      <p>The hard part is not running a sentiment model. It is <b>knowing which company a sentence is about</b>, <b>counting a syndicated story once</b>, <b>telling chatter from events</b>, and proving that an "impact" score means something in market terms.</p>
+    </div>
+    <div class="card" style="align-self:start">
+      <h3>Approach</h3>
+      <ul>
+        <li><b>Engine:</b> per-entity sentiment, 10-class events with ISDA-style credit subtypes, impact 1–10, plus the scope and transmission channels downstream risk needs</li>
+        <li><b>Module A:</b> Black-Litterman index tilted by sentiment, under a 2% tracking-error budget</li>
+        <li><b>Module B:</b> wholesale bank book stress-tested on corroborated adverse events; CET1 under IFRS 9 and Basel IRB</li>
+        <li><b>Every claim measured:</b> event study, walk-forward backtest, gold set, calibration to 2008/2020/2022</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Signal Risk · Naman Karwa · IIT Guwahati</span><span>2 / 7</span></div>
+</section>
+
+<!-- 3 · System design -->
+<section class="slide" style="padding-top:48px;">
+  <div class="kicker">System design</div>
+  <h2 style="margin-bottom:22px;">Five stages, one signal contract, an evaluation loop around all of it</h2>
+  <img class="shot" src="../architecture.png" style="height:680px;width:auto;display:block;margin:0 auto;" alt="Architecture diagram">
+  <div class="foot"><span>Signal Risk · Naman Karwa · IIT Guwahati</span><span>3 / 7</span></div>
+</section>
+
+<!-- 4 · Implementation highlights -->
+<section class="slide">
+  <div class="kicker">Implementation highlights</div>
+  <h2>Where the engineering went, and why</h2>
+  <div class="grid3" style="margin-top:34px;">
+    <div class="card"><h3>Entity linking that understands finance</h3><p>Cashtags, aliases and guarded ambiguous names: "Dow" is not Dow Jones, "Merck KGaA" is not Merck, an apple pie is not Apple. Clause targeting gives "Apple beats, while Tesla misses" <b>+0.71</b> and <b>−0.93</b>.</p></div>
+    <div class="card"><h3>Stories, not articles</h3><p>MinHash clustering counts syndicated copies once and turns breadth of coverage and novelty into features; a relevance gate keeps general news honest.</p></div>
+    <div class="card"><h3>Student over zero-shot</h3><p>FinBERT fine-tuned on 12.8k finance tweets: macro-F1 <b>0.95 vs 0.48</b> for zero-shot on held-out data. Hybrid keeps zero-shot for classes without data; a Groq-hosted LLM teacher fills them.</p></div>
+    <div class="card"><h3>Data where it was hard</h3><p>GDELT's 15-minute GKG files (the search API throttles), SEC 8-K item codes as free event labels, 145k FNSPID articles range-fetched from a 23 GB file (6% downloaded).</p></div>
+    <div class="card"><h3>Portfolio construction</h3><p>Sentiment views sized by Grinold's rule (α = IC × σ × score) inside Black-Litterman, Ledoit-Wolf risk, long-only, 2% ex-ante TE, no-trade band.</p></div>
+    <div class="card"><h3>Bank-grade stress engine</h3><p>Vasicek conditional PDs, IFRS 9 stage 2 lifetime ECL, Basel IRB RWA, revolver drawdowns, ALM-hedged rate book, factor attribution and reverse stress testing.</p></div>
+  </div>
+  <p style="margin-top:22px;font-size:17px;color:var(--ink3)">Python · PyTorch (CUDA, laptop RTX 3050) · Hugging Face Transformers · DuckDB · FastAPI + server-sent events · React · ECharts · 65 automated tests</p>
+  <div class="foot"><span>Signal Risk · Naman Karwa · IIT Guwahati</span><span>4 / 7</span></div>
+</section>
+
+<!-- 5 · Key results -->
+<section class="slide" style="padding-top:52px;">
+  <div class="kicker">Key results</div>
+  <h2>Measured, not asserted</h2>
+  <div style="display:grid;grid-template-columns:520px 1fr;gap:36px;margin-top:22px;">
+    <div style="display:flex;flex-direction:column;gap:12px;" class="results">
+      <div class="card"><div class="big">84%</div><div class="label">of Lehman-2008 severity breaks the bank's 8% CET1 requirement (90% for March 2020; a Russia-Ukraine shock never does, even at 150%)</div></div>
+      <div class="card"><div class="big">10 Mar 2023</div><div class="label">SVB replay: systemic stress test triggered on "Silicon Valley Bank's Liquidity Crisis"; re-run for Credit Suisse and First Republic; zero false alarms on quiet news</div></div>
+      <div class="card"><div class="big">ρ = 0.059</div><div class="label">impact score vs realised 2-day abnormal returns on 2,141 held-out stock-days (≈ 2.7 SE); a boosted model was not adopted because its gain was not significant</div></div>
+      <div class="card"><div class="big">2.1% <span style="font-size:24px;color:var(--ink3)">of 2% budget</span></div><div class="label">Module A realised tracking error, 2022–23 walk-forward with costs; +1.1% p.a. active (t = 0.74)</div></div>
+    </div>
+    <img class="shot" src="../screenshots/stress.png" style="width:100%;height:660px;object-fit:cover;object-position:top;" alt="Stress testing dashboard">
+  </div>
+  <div class="foot"><span>Signal Risk · Naman Karwa · IIT Guwahati</span><span>5 / 7</span></div>
+</section>
+
+<!-- 6 · Domain impact -->
+<section class="slide">
+  <div class="kicker">Domain impact</div>
+  <h2>From a headline to a capital number in minutes</h2>
+  <div class="grid2" style="margin-top:34px;">
+    <div>
+      <p><b>For a bank's risk team:</b> a corroborated adverse event becomes a scenario calibrated to history, scaled by its severity and targeted at the countries it names, and lands as CET1 headroom, the exposures driving the loss and the severity at which buffers break. Stress testing stops being a quarterly ritual.</p>
+      <p><b>For a portfolio manager:</b> sentiment enters as a sized, confidence-weighted view under a hard risk budget, so a burst of credible news tilts the index and a single viral post does not.</p>
+      <p><b>For model risk:</b> every number has a test behind it, and the system says when it is not good enough.</p>
+    </div>
+    <div class="card" style="align-self:start">
+      <h3>Findings a desk can use</h3>
+      <ul>
+        <li><b>News is priced within a day:</b> sentiment agrees with the same-day move (ρ = +0.086) but reverses slightly when traded a day later (IC −0.024). Speed matters, so the live index rebalances on 15-minute news.</li>
+        <li><b>Media attention is not market impact:</b> 193 outlets covering a political sanctions story triggered nothing once breadth was damped and economic content required.</li>
+        <li><b>Capital is most exposed to credit and pandemic-type shocks,</b> not geopolitical ones, for this book.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Signal Risk · Naman Karwa · IIT Guwahati</span><span>6 / 7</span></div>
+</section>
+
+<!-- 7 · Limitations & next steps -->
+<section class="slide">
+  <div class="kicker">Limitations &amp; next steps</div>
+  <h2>What is honest to say, and what comes next</h2>
+  <div class="grid2" style="margin-top:34px;">
+    <div class="card">
+      <h3>Limitations</h3>
+      <ul>
+        <li>The impact score is validated but modest; on the Ukraine replay invasion day scored 6, one short of the stress trigger</li>
+        <li>Student validation is in-domain (tweets); transfer to news is what the 875-item gold set will measure</li>
+        <li>Historical text is date-stamped, forcing next-day trading in backtests</li>
+        <li>The banking book is synthetic; credit-factor shocks are expert-set, market moves are calibrated</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Next steps</h3>
+      <ul>
+        <li>Finish the gold set and score baseline, teacher and student on news</li>
+        <li>Silver labels from the Groq-hosted teacher for credit and operational events; retrain the student</li>
+        <li>Retrain the impact model on the improved event features</li>
+        <li>Intraday timestamps for a latency-aware backtest; second-round contagion in Module B</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:34px;font-size:18px;color:var(--ink3)">Code, data sources and setup: public GitHub repository (README) · demo video linked there</p>
+  <div class="foot"><span>Signal Risk · Naman Karwa · IIT Guwahati</span><span>7 / 7</span></div>
+</section>
+
+</body>
+</html>

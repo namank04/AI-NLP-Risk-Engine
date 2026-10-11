@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1330" viewBox="0 0 2400 1330" font-family="Segoe UI, system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52514e"/>
+    </marker>
+    <style>
+      .lane { fill: #f6f6f3; }
+      .lanet { font-size: 22px; font-weight: 700; fill: #0b0b0b; letter-spacing: .4px; }
+      .lanes { font-size: 16px; fill: #6b6a65; }
+      .box { fill: #ffffff; stroke: #d9d8d2; stroke-width: 1.5; }
+      .key { fill: #ffffff; stroke: #2a78d6; stroke-width: 2.5; }
+      .h { font-size: 20px; font-weight: 600; fill: #0b0b0b; }
+      .t { font-size: 16px; fill: #52514e; }
+      .tag { font-size: 14px; fill: #2a78d6; font-weight: 600; }
+      .flow { stroke: #52514e; stroke-width: 2; fill: none; marker-end: url(#arr); }
+      .loop { stroke: #2a78d6; stroke-width: 2; fill: none; stroke-dasharray: 0; marker-end: url(#arr); }
+    </style>
+  </defs>
+  <rect width="2400" height="1330" fill="#fcfcfb"/>
+  <text x="60" y="70" font-size="34" font-weight="700" fill="#0b0b0b">Signal Risk · system architecture</text>
+  <text x="60" y="104" font-size="18" fill="#52514e">Unstructured text → structured risk signals → index rebalancing (Module A) and bank stress testing (Module B)</text>
+
+  <!-- lanes -->
+  <rect class="lane" x="40" y="140" width="400" height="890" rx="18"/>
+  <rect class="lane" x="480" y="140" width="440" height="890" rx="18"/>
+  <rect class="lane" x="960" y="140" width="440" height="890" rx="18"/>
+  <rect class="lane" x="1440" y="140" width="380" height="890" rx="18"/>
+  <rect class="lane" x="1860" y="140" width="500" height="890" rx="18"/>
+  <text class="lanet" x="70" y="185">1 · SOURCES</text><text class="lanes" x="70" y="210">live and historical text, market data</text>
+  <text class="lanet" x="510" y="185">2 · INGESTION</text><text class="lanes" x="510" y="210">what decides signal quality</text>
+  <text class="lanet" x="990" y="185">3 · NLP ENGINE</text><text class="lanes" x="990" y="210">per (item, entity) signal</text>
+  <text class="lanet" x="1470" y="185">4 · SERVING</text><text class="lanes" x="1470" y="210">the signal contract</text>
+  <text class="lanet" x="1890" y="185">5 · CONSUMERS</text><text class="lanes" x="1890" y="210">subscribe to the stream</text>
+
+  <!-- sources -->
+  <rect class="box" x="70" y="240" width="340" height="120" rx="12"/>
+  <text class="h" x="92" y="276">GDELT 2.0 GKG</text><text class="t" x="92" y="304">global news every 15 minutes</text><text class="t" x="92" y="328">title · tone · themes · URL</text>
+  <rect class="box" x="70" y="378" width="340" height="120" rx="12"/>
+  <text class="h" x="92" y="414">SEC EDGAR 8-K filings</text><text class="t" x="92" y="442">item codes = authoritative</text><text class="t" x="92" y="466">event labels · press releases</text>
+  <rect class="box" x="70" y="516" width="340" height="120" rx="12"/>
+  <text class="h" x="92" y="552">FNSPID news (2009–2023)</text><text class="t" x="92" y="580">145k ticker-tagged articles</text><text class="t" x="92" y="604">range-fetched from a 23 GB file</text>
+  <rect class="box" x="70" y="654" width="340" height="100" rx="12"/>
+  <text class="h" x="92" y="690">Stock tweets</text><text class="t" x="92" y="718">1.7M social posts, 2015–2019</text>
+  <rect class="box" x="70" y="772" width="340" height="120" rx="12"/>
+  <text class="h" x="92" y="808">Market data</text><text class="t" x="92" y="836">yfinance prices · FRED yields,</text><text class="t" x="92" y="860">credit spreads, VIX, Brent</text>
+
+  <!-- ingestion -->
+  <rect class="box" x="510" y="240" width="380" height="104" rx="12"/>
+  <text class="h" x="532" y="276">Normalise &amp; timestamp</text><text class="t" x="532" y="304">event · publish · ingest times</text><text class="t" x="532" y="326">replay recorder for demos</text>
+  <rect class="key" x="510" y="362" width="380" height="140" rx="12"/>
+  <text class="h" x="532" y="398">Entity linking</text><text class="t" x="532" y="426">cashtags · aliases · ambiguous names</text><text class="t" x="532" y="450">("Dow" ≠ Dow Jones, "Merck KGaA")</text><text class="t" x="532" y="474">relevance gate for general news</text>
+  <rect class="key" x="510" y="520" width="380" height="140" rx="12"/>
+  <text class="h" x="532" y="556">Story clustering</text><text class="t" x="532" y="584">MinHash LSH on headlines</text><text class="t" x="532" y="608">syndicated copies count once</text><text class="t" x="532" y="632">→ novelty, breadth of coverage</text>
+  <rect class="box" x="510" y="678" width="380" height="104" rx="12"/>
+  <text class="h" x="532" y="714">Source credibility</text><text class="t" x="532" y="742">filing &gt; wire &gt; press &gt; blog &gt; post</text><text class="t" x="532" y="764">engagement for social</text>
+
+  <!-- engine -->
+  <rect class="key" x="990" y="240" width="380" height="140" rx="12"/>
+  <text class="h" x="1012" y="276">Entity-level sentiment</text><text class="t" x="1012" y="304">FinBERT on clauses naming the entity</text><text class="t" x="1012" y="328">"Apple beats, while Tesla misses"</text><text class="t" x="1012" y="352">→ +0.71 AAPL, −0.93 TSLA</text>
+  <rect class="box" x="990" y="398" width="380" height="140" rx="12"/>
+  <text class="h" x="1012" y="434">Event classification</text><text class="t" x="1012" y="462">10 classes, ISDA-style credit subtypes</text><text class="t" x="1012" y="486">student + zero-shot hybrid · 8-K · lexicon</text><text class="tag" x="1012" y="512">FinBERT student: macro-F1 0.95 vs 0.48</text>
+  <rect class="key" x="990" y="556" width="380" height="140" rx="12"/>
+  <text class="h" x="1012" y="592">Impact score 1–10</text><text class="t" x="1012" y="620">event type · tone · novelty · breadth</text><text class="t" x="1012" y="644">validated vs realised abnormal returns</text><text class="tag" x="1012" y="670">event study: ρ = 0.059, t ≈ 2.7</text>
+  <rect class="box" x="990" y="714" width="380" height="104" rx="12"/>
+  <text class="h" x="1012" y="750">Scope &amp; channels</text><text class="t" x="1012" y="778">countries · sectors · commodities</text><text class="t" x="1012" y="800">rates · spreads · equity · FX</text>
+
+  <!-- serving -->
+  <rect class="box" x="1470" y="240" width="320" height="124" rx="12"/>
+  <text class="h" x="1492" y="276">Signal store</text><text class="t" x="1492" y="304">DuckDB, one row per</text><text class="t" x="1492" y="328">(item, entity) signal</text>
+  <rect class="key" x="1470" y="382" width="320" height="150" rx="12"/>
+  <text class="h" x="1492" y="418">FastAPI</text><text class="t" x="1492" y="446">REST: signals, entities,</text><text class="t" x="1492" y="470">analyze, stress, index</text><text class="t" x="1492" y="494">SSE: live signal stream</text>
+  <rect class="box" x="1470" y="550" width="320" height="124" rx="12"/>
+  <text class="h" x="1492" y="586">Event bus</text><text class="t" x="1492" y="614">modules subscribe to</text><text class="t" x="1492" y="638">sentiment / event / impact</text>
+
+  <!-- consumers -->
+  <rect class="key" x="1890" y="240" width="440" height="200" rx="12"/>
+  <text class="h" x="1912" y="276">Module A · Index rebalancer</text>
+  <text class="t" x="1912" y="306">20 S&amp;P 100 names, all 11 sectors</text>
+  <text class="t" x="1912" y="330">decayed, credibility-weighted sentiment</text>
+  <text class="t" x="1912" y="354">Black-Litterman, Grinold-sized views</text>
+  <text class="t" x="1912" y="378">long-only, 2% ex-ante tracking error</text>
+  <text class="tag" x="1912" y="410">walk-forward backtest 2022–2023</text>
+  <rect class="key" x="1890" y="458" width="440" height="250" rx="12"/>
+  <text class="h" x="1912" y="494">Module B · Stress testing</text>
+  <text class="t" x="1912" y="524">corroborated, adverse, high-impact trigger</text>
+  <text class="t" x="1912" y="548">scenarios calibrated to 2008 · 2020 · 2022</text>
+  <text class="t" x="1912" y="572">408-position wholesale book, ALM-hedged</text>
+  <text class="t" x="1912" y="596">Vasicek / Basel IRB · IFRS 9 ECL · CET1</text>
+  <text class="t" x="1912" y="620">factor attribution · reverse stress test</text>
+  <text class="tag" x="1912" y="652">GFC-type: buffer breach at 84% severity</text>
+  <text class="tag" x="1912" y="676">SVB replay: triggered 10 Mar 2023</text>
+  <rect class="box" x="1890" y="726" width="440" height="124" rx="12"/>
+  <text class="h" x="1912" y="762">React dashboard</text><text class="t" x="1912" y="790">Desk · Analyze · Index · Stress</text><text class="t" x="1912" y="814">Evaluation</text>
+
+  <!-- flows -->
+  <path class="flow" d="M410,300 C460,300 460,300 505,300"/>
+  <path class="flow" d="M410,438 C460,438 460,420 505,420"/>
+  <path class="flow" d="M410,576 C460,576 460,590 505,590"/>
+  <path class="flow" d="M410,704 C460,704 460,730 505,730"/>
+  <path class="flow" d="M890,430 C940,430 940,310 985,310"/>
+  <path class="flow" d="M890,590 C940,590 940,468 985,468"/>
+  <path class="flow" d="M890,730 C940,730 940,626 985,626"/>
+  <path class="flow" d="M1370,310 C1420,310 1420,302 1465,302"/>
+  <path class="flow" d="M1370,626 C1420,626 1420,612 1465,612"/>
+  <path class="flow" d="M1630,364 L1630,377"/>
+  <path class="flow" d="M1630,532 L1630,545"/>
+  <path class="flow" d="M1790,612 C1840,612 1840,340 1885,340"/>
+  <path class="flow" d="M1790,612 C1840,612 1840,583 1885,583"/>
+  <path class="flow" d="M1790,456 C1840,456 1840,788 1885,788"/>
+  <path class="flow" d="M410,832 C700,960 1600,960 1885,400"/>
+  <text class="t" x="960" y="985">prices &amp; risk model (covariance, cap weights) · scenario calibration</text>
+
+  <!-- evaluation band -->
+  <rect x="40" y="1060" width="2320" height="230" rx="18" fill="#eef4fc"/>
+  <text class="lanet" x="70" y="1104">EVALUATION LOOP</text><text class="lanes" x="70" y="1130">every claim is measured, held out from training</text>
+  <rect class="box" x="70" y="1150" width="520" height="110" rx="12"/>
+  <text class="h" x="92" y="1186">Gold set (875 items)</text><text class="t" x="92" y="1214">hand labels: relevance, 5-point sentiment,</text><text class="t" x="92" y="1238">event classes · keyboard labeling tool</text>
+  <rect class="box" x="630" y="1150" width="520" height="110" rx="12"/>
+  <text class="h" x="652" y="1186">Model quality</text><text class="t" x="652" y="1214">link precision · sentiment F1 · event F1</text><text class="t" x="652" y="1238">baseline vs LLM teacher vs students</text>
+  <rect class="box" x="1190" y="1150" width="520" height="110" rx="12"/>
+  <text class="h" x="1212" y="1186">Event study</text><text class="t" x="1212" y="1214">SPY market model, 2-day abnormal return</text><text class="t" x="1212" y="1238">bootstrap test before adopting a model</text>
+  <rect class="box" x="1750" y="1150" width="580" height="110" rx="12"/>
+  <text class="h" x="1772" y="1186">Backtest &amp; calibration checks</text><text class="t" x="1772" y="1214">IC, tracking error, costs · CET1 drawdowns</text><text class="t" x="1772" y="1238">vs regulatory severely-adverse range</text>
+</svg>
