@@ -1,0 +1,193 @@
+{
+  "unit": "stock-day",
+  "n_train": 6481,
+  "n_test": 2141,
+  "test_start": "2023-07-01",
+  "spearman": {
+    "learned": 0.07173658811116793,
+    "rule_v0": 0.058721939093707785,
+    "news_count": 0.033195553685984695,
+    "max_abs_sentiment": 0.03226686284445197,
+    "p_earnings": 0.039973037739293074
+  },
+  "spearman_se": 0.02161183615368384,
+  "bootstrap_learned_minus_rule": {
+    "mean_diff": 0.01299740349283711,
+    "ci95": [
+      -0.028548539781976003,
+      0.05666602393621511
+    ],
+    "p_learned_not_better": 0.269
+  },
+  "adopted": "rule_v0",
+  "sentiment_direction": {
+    "spearman_sentiment_vs_signed_scar": 0.08608819920411666,
+    "hit_rate_strong": 0.5272003279264508
+  },
+  "deciles_learned": [
+    {
+      "decile": 1,
+      "n": 215,
+      "median_abs_car_pct": 0.8731,
+      "mean_abs_scar": 0.6258,
+      "share_2sigma": 0.014
+    },
+    {
+      "decile": 2,
+      "n": 214,
+      "median_abs_car_pct": 0.8339,
+      "mean_abs_scar": 0.6336,
+      "share_2sigma": 0.0327
+    },
+    {
+      "decile": 3,
+      "n": 214,
+      "median_abs_car_pct": 0.9587,
+      "mean_abs_scar": 0.6542,
+      "share_2sigma": 0.0327
+    },
+    {
+      "decile": 4,
+      "n": 214,
+      "median_abs_car_pct": 0.9977,
+      "mean_abs_scar": 0.7181,
+      "share_2sigma": 0.0327
+    },
+    {
+      "decile": 5,
+      "n": 214,
+      "median_abs_car_pct": 0.9667,
+      "mean_abs_scar": 0.6999,
+      "share_2sigma": 0.0374
+    },
+    {
+      "decile": 6,
+      "n": 214,
+      "median_abs_car_pct": 0.9832,
+      "mean_abs_scar": 0.7057,
+      "share_2sigma": 0.028
+    },
+    {
+      "decile": 7,
+      "n": 214,
+      "median_abs_car_pct": 1.1423,
+      "mean_abs_scar": 0.793,
+      "share_2sigma": 0.0654
+    },
+    {
+      "decile": 8,
+      "n": 214,
+      "median_abs_car_pct": 1.1582,
+      "mean_abs_scar": 0.7339,
+      "share_2sigma": 0.0514
+    },
+    {
+      "decile": 9,
+      "n": 214,
+      "median_abs_car_pct": 1.3226,
+      "mean_abs_scar": 0.6887,
+      "share_2sigma": 0.0187
+    },
+    {
+      "decile": 10,
+      "n": 214,
+      "median_abs_car_pct": 1.6777,
+      "mean_abs_scar": 1.0453,
+      "share_2sigma": 0.1542
+    }
+  ],
+  "deciles_rule_v0": [
+    {
+      "decile": 1,
+      "n": 215,
+      "median_abs_car_pct": 0.9566,
+      "mean_abs_scar": 0.7099,
+      "share_2sigma": 0.0465
+    },
+    {
+      "decile": 2,
+      "n": 214,
+      "median_abs_car_pct": 0.8736,
+      "mean_abs_scar": 0.615,
+      "share_2sigma": 0.0187
+    },
+    {
+      "decile": 3,
+      "n": 214,
+      "median_abs_car_pct": 0.9339,
+      "mean_abs_scar": 0.6261,
+      "share_2sigma": 0.028
+    },
+    {
+      "decile": 4,
+      "n": 214,
+      "median_abs_car_pct": 0.9388,
+      "mean_abs_scar": 0.6999,
+      "share_2sigma": 0.028
+    },
+    {
+      "decile": 5,
+      "n": 214,
+      "median_abs_car_pct": 0.9935,
+      "mean_abs_scar": 0.771,
+      "share_2sigma": 0.0607
+    },
+    {
+      "decile": 6,
+      "n": 214,
+      "median_abs_car_pct": 1.0207,
+      "mean_abs_scar": 0.7211,
+      "share_2sigma": 0.0607
+    },
+    {
+      "decile": 7,
+      "n": 214,
+      "median_abs_car_pct": 1.3547,
+      "mean_abs_scar": 0.8407,
+      "share_2sigma": 0.0748
+    },
+    {
+      "decile": 8,
+      "n": 214,
+      "median_abs_car_pct": 1.2682,
+      "mean_abs_scar": 0.7872,
+      "share_2sigma": 0.0327
+    },
+    {
+      "decile": 9,
+      "n": 214,
+      "median_abs_car_pct": 1.1296,
+      "mean_abs_scar": 0.7581,
+      "share_2sigma": 0.0561
+    },
+    {
+      "decile": 10,
+      "n": 214,
+      "median_abs_car_pct": 1.1053,
+      "mean_abs_scar": 0.7687,
+      "share_2sigma": 0.0607
+    }
+  ],
+  "feature_importance": {
+    "p_earnings_max": 189.0,
+    "vix": 183.7,
+    "log_n": 104.2,
+    "log_mcap": 66.7,
+    "beta": 50.4,
+    "rule_mean": 35.3,
+    "vol20": 31.1,
+    "sent_mean": 21.1,
+    "abs_s_max": 21.0,
+    "p_macroeconomic_max": 14.6,
+    "p_operational_max": 12.9,
+    "rule_max": 12.0,
+    "sent_min": 7.7,
+    "p_management_change_max": 5.1,
+    "p_regulatory_legal_max": 5.0,
+    "p_credit_event_max": 3.5,
+    "p_product_launch_max": 2.7,
+    "p_geopolitical_max": 1.8,
+    "sw_max": 0.0,
+    "p_merger_acquisition_max": 0.0
+  }
+}

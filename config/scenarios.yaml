@@ -1,0 +1,374 @@
+# Stress scenario library for Module B.
+#
+# Each systemic template is anchored to a historical episode and expressed at
+# severity 1.0 (the full historical move). A detected event scales it:
+#     severity = clip((impact - 4) / 6, 0.2, 1.0)          impact 7 -> 0.5, 10 -> 1.0
+#     systematic credit factor z = credit_z * severity   (credit_z = std devs at full severity;
+#     back-solving Vasicek from GFC-era default rates, ~3x long-run for spec grade, gives z ~ 1.4)
+# Initial magnitudes are first estimates; scripts/calibrate_scenarios.py
+# replaces market-factor shocks with moves measured over each episode window
+# from FRED / market data and records them under `calibrated`.
+#
+# Units: rates_bp & spreads in basis points, equity/fx/commodity in percent,
+# fx = % change of the foreign currency vs USD (negative = currency weakens).
+
+trigger:
+  min_impact: 7
+  max_sentiment: -0.2         # only adverse news triggers a stress test
+  min_sources: 2              # independent outlets in the story cluster (filings count alone)
+  cooldown_hours: 6           # per scenario (systemic class or counterparty)
+  escalation_step: 0.15       # within cooldown, re-run only if severity rises this much (or new countries)
+  systemic_classes: [geopolitical, macroeconomic, credit_event, operational]
+  idiosyncratic_classes: [credit_event, regulatory_legal, operational, management_change, earnings, merger_acquisition]
+
+systemic:
+  geopolitical:
+    name: Geopolitical shock (Russia-Ukraine 2022 analogue)
+    episode:
+      start: '2022-02-10'
+      end: '2022-03-08'
+    rates_bp:
+      USD: -15
+      EUR: -20
+      GBP: -10
+      JPY: 0
+      EM: 150
+    credit_spread_bp:
+      AAA: 10
+      AA: 15
+      A: 25
+      BBB: 40
+      BB: 120
+      B: 200
+      CCC: 400
+    sovereign_spread_bp:
+      EM: 150
+    equity_pct:
+      _all: -8
+      Energy: 10
+      Financials: -12
+      Industrials: -10
+      Consumer Discretionary: -12
+    fx_pct:
+      EUR: -4
+      GBP: -3
+      JPY: 1
+      CNY: -1
+      INR: -3
+      BRL: -5
+      MXN: -5
+      TWD: -3
+    commodity_pct:
+      crude_oil: 35
+    credit_z:
+      _all: 0.5
+      Energy: -0.3
+      Industrials: 0.8
+      Consumer Discretionary: 0.6
+    revolver_drawdown: 0.1
+    scope_addon:
+      sovereign_spread_bp: 300
+      fx_pct: -10
+      credit_z: 1.5
+      equity_pct: -15
+    calibrated:
+      rates_bp:
+        USD: -17.0
+        USD_2Y: 2.0
+      credit_spread_bp:
+        AAA: 15.0
+        AA: 20.0
+        A: 29.0
+        BBB: 44.0
+        BB: 97.0
+        B: 145.0
+        CCC: 286.0
+      equity_pct:
+        _all: -7.4
+        Information Technology: -10.1
+        Communication Services: -9.5
+        Consumer Discretionary: -12.2
+        Financials: -12.3
+        Energy: 13.3
+        Health Care: -4.2
+        Industrials: -5.3
+        Consumer Staples: -4.0
+        Utilities: 7.2
+        Materials: -6.5
+        Real Estate: -4.5
+      fx_pct:
+        EUR: -4.9
+        GBP: -3.1
+        JPY: 0.2
+        CNY: 0.7
+        INR: -2.9
+        BRL: 2.4
+        MXN: -3.8
+        TWD: -1.8
+      commodity_pct:
+        crude_oil: 38.2
+      vix_change: 11.2
+  macroeconomic:
+    name: Rates shock (2022 tightening analogue)
+    episode:
+      start: '2022-01-03'
+      end: '2022-06-16'
+    rates_bp:
+      USD: 150
+      EUR: 120
+      GBP: 150
+      JPY: 20
+      EM: 200
+    credit_spread_bp:
+      AAA: 15
+      AA: 20
+      A: 35
+      BBB: 60
+      BB: 180
+      B: 280
+      CCC: 550
+    sovereign_spread_bp:
+      EM: 100
+    equity_pct:
+      _all: -15
+      Information Technology: -25
+      Communication Services: -25
+      Real Estate: -22
+      Utilities: -8
+      Energy: 5
+    fx_pct:
+      EUR: -6
+      GBP: -8
+      JPY: -12
+      CNY: -4
+      INR: -5
+      BRL: -8
+      MXN: -6
+      TWD: -6
+    commodity_pct:
+      crude_oil: 10
+    credit_z:
+      _all: 1.0
+      Real Estate: 0.5
+    revolver_drawdown: 0.1
+    scope_addon:
+      sovereign_spread_bp: 100
+      fx_pct: -5
+      credit_z: 0.5
+      equity_pct: -5
+    calibrated:
+      rates_bp:
+        USD: 165.0
+        USD_2Y: 236.0
+      credit_spread_bp:
+        AAA: 11.0
+        AA: 14.0
+        A: 20.0
+        BBB: 31.0
+        BB: 68.0
+        B: 102.0
+        CCC: 202.0
+      equity_pct:
+        _all: -23.0
+        Information Technology: -29.5
+        Communication Services: -32.0
+        Consumer Discretionary: -35.9
+        Financials: -21.7
+        Energy: 62.8
+        Health Care: -13.7
+        Industrials: -18.0
+        Consumer Staples: -10.0
+        Utilities: 9.3
+        Materials: -15.8
+        Real Estate: -23.9
+      fx_pct:
+        EUR: -8.1
+        GBP: -10.0
+        JPY: -14.1
+        CNY: -5.3
+        INR: -4.3
+        BRL: 10.2
+        MXN: 1.3
+        TWD: -5.8
+      commodity_pct:
+        crude_oil: 60.7
+      vix_change: 16.4
+  credit_event:
+    name: Systemic credit / banking crisis (2008 Lehman analogue)
+    episode:
+      start: '2008-09-12'
+      end: '2008-11-20'
+    rates_bp:
+      USD: -75
+      EUR: -50
+      GBP: -60
+      JPY: -10
+      EM: 100
+    credit_spread_bp:
+      AAA: 60
+      AA: 90
+      A: 140
+      BBB: 220
+      BB: 500
+      B: 750
+      CCC: 1500
+    sovereign_spread_bp:
+      EM: 250
+    equity_pct:
+      _all: -20
+      Financials: -35
+      Real Estate: -30
+      Consumer Staples: -10
+      Health Care: -12
+    fx_pct:
+      EUR: -8
+      GBP: -12
+      JPY: 8
+      CNY: 0
+      INR: -8
+      BRL: -25
+      MXN: -20
+      TWD: -5
+    commodity_pct:
+      crude_oil: -25
+    credit_z:
+      _all: 1.5
+      Financials: 2.0
+      Real Estate: 2.0
+    revolver_drawdown: 0.3
+    scope_addon:
+      sovereign_spread_bp: 200
+      fx_pct: -8
+      credit_z: 1.0
+      equity_pct: -10
+    calibrated:
+      rates_bp:
+        USD: -64.0
+        USD_2Y: -123.0
+      credit_spread_bp:
+        AAA: 87.0
+        AA: 112.0
+        A: 162.0
+        BBB: 249.0
+        BB: 548.0
+        B: 822.0
+        CCC: 1618.0
+      equity_pct:
+        _all: -39.8
+        Information Technology: -39.1
+        Consumer Discretionary: -47.5
+        Financials: -55.2
+        Energy: -41.8
+        Health Care: -27.0
+        Industrials: -41.0
+        Consumer Staples: -24.2
+        Utilities: -28.8
+        Materials: -47.5
+      fx_pct:
+        EUR: -12.6
+        GBP: -17.8
+        JPY: 14.8
+        CNY: 0.0
+        INR: -9.5
+        BRL: -24.3
+        MXN: -24.5
+        TWD: -4.7
+      commodity_pct:
+        crude_oil: -51.5
+      vix_change: 55.2
+  operational:
+    name: Global disruption / pandemic (March 2020 analogue)
+    episode:
+      start: '2020-02-19'
+      end: '2020-03-23'
+    rates_bp:
+      USD: -120
+      EUR: -30
+      GBP: -60
+      JPY: -10
+      EM: 50
+    credit_spread_bp:
+      AAA: 50
+      AA: 80
+      A: 130
+      BBB: 250
+      BB: 500
+      B: 800
+      CCC: 1500
+    sovereign_spread_bp:
+      EM: 200
+    equity_pct:
+      _all: -30
+      Energy: -50
+      Consumer Discretionary: -35
+      Industrials: -35
+      Health Care: -15
+      Information Technology: -25
+    fx_pct:
+      EUR: -3
+      GBP: -8
+      JPY: 3
+      CNY: -2
+      INR: -6
+      BRL: -20
+      MXN: -20
+      TWD: -2
+    commodity_pct:
+      crude_oil: -55
+    credit_z:
+      _all: 1.5
+      Energy: 2.5
+      Consumer Discretionary: 2.0
+      Industrials: 2.0
+    revolver_drawdown: 0.5
+    scope_addon:
+      sovereign_spread_bp: 100
+      fx_pct: -5
+      credit_z: 0.5
+      equity_pct: -5
+    calibrated:
+      rates_bp:
+        USD: -80.0
+        USD_2Y: -114.0
+      credit_spread_bp:
+        AAA: 79.0
+        AA: 102.0
+        A: 147.0
+        BBB: 226.0
+        BB: 497.0
+        B: 746.0
+        CCC: 1469.0
+      equity_pct:
+        _all: -33.7
+        Information Technology: -31.2
+        Communication Services: -30.1
+        Consumer Discretionary: -33.9
+        Financials: -42.8
+        Energy: -56.3
+        Health Care: -27.9
+        Industrials: -41.6
+        Consumer Staples: -24.2
+        Utilities: -35.4
+        Materials: -36.2
+        Real Estate: -37.8
+      fx_pct:
+        EUR: -0.9
+        GBP: -10.6
+        JPY: -0.5
+        CNY: -1.4
+        INR: -5.4
+        BRL: -13.7
+        MXN: -24.9
+        TWD: -0.7
+      commodity_pct:
+        crude_oil: -60.2
+      vix_change: 47.2
+idiosyncratic:
+  name: Single-name event
+  equity_pct: -25
+  credit_spread_bp: 300
+  credit_z: 2.5
+  default_subtypes:
+  - bankruptcy
+  - failure_to_pay
+  sector_contagion: 0.25

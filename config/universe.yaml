@@ -1,0 +1,135 @@
+# Mock index universe: 20 S&P 100 constituents covering all 11 GICS sectors.
+# Selection rule: same-sector large caps WITH dense, consistent 2022-2023 news
+# coverage in FNSPID (the backtest/impact-training corpus). FNSPID has no articles
+# for JPM, BAC, JNJ, UNH, PG or META and none for AMZN before 2023, so those were
+# replaced by covered names in the same sector (see docs/data_audit.md).
+# Banks (GS, WFC) and energy are kept because they link Module A to the credit
+# and commodity channels Module B stresses.
+#
+# aliases:            matched case-insensitively on word boundaries
+#                     (all-caps tickers like "MSFT" match case-sensitively)
+# ambiguous_aliases:  also common words/names; matched case-sensitively AND only
+#                     when a finance cue appears in the text
+# "re:" prefix:       a raw regex, for aliases needing exclusions ("Dow" but not "Dow Jones")
+# products:           weak evidence, linked only when the company is not named
+
+companies:
+  - ticker: AAPL
+    name: Apple Inc.
+    sector: Information Technology
+    aliases: [Apple Inc, AAPL]
+    ambiguous_aliases: [Apple]
+    products: [iPhone, iPad, MacBook, App Store, Vision Pro]
+  - ticker: MSFT
+    name: Microsoft Corporation
+    sector: Information Technology
+    aliases: [Microsoft, MSFT]
+    products: [Azure, Windows, Xbox, LinkedIn, Copilot]
+  - ticker: NVDA
+    name: NVIDIA Corporation
+    sector: Information Technology
+    aliases: [Nvidia, NVDA]
+    products: [GeForce, CUDA, Blackwell, H100, H200]
+  - ticker: GOOGL
+    name: Alphabet Inc.
+    sector: Communication Services
+    aliases: [Alphabet, Google, GOOGL, GOOG]
+    products: [YouTube, Waymo, Gemini, Android]
+  - ticker: DIS
+    name: The Walt Disney Company
+    sector: Communication Services
+    aliases: [Walt Disney, Disney]
+    ambiguous_aliases: [DIS]
+    products: [Disney+, ESPN, Pixar, Hulu]
+  - ticker: TSLA
+    name: Tesla Inc.
+    sector: Consumer Discretionary
+    aliases: [Tesla, TSLA]
+    products: [Model 3, Model Y, Cybertruck, Gigafactory]
+  - ticker: NKE
+    name: Nike Inc.
+    sector: Consumer Discretionary
+    aliases: [Nike Inc, NKE]
+    ambiguous_aliases: [Nike]
+    products: [Air Jordan, Converse]
+  - ticker: GS
+    name: The Goldman Sachs Group Inc.
+    sector: Financials
+    aliases: [Goldman Sachs, Goldman]
+    ambiguous_aliases: [GS]
+  - ticker: WFC
+    name: Wells Fargo & Company
+    sector: Financials
+    aliases: [Wells Fargo, WFC]
+  - ticker: XOM
+    name: Exxon Mobil Corporation
+    sector: Energy
+    aliases: [Exxon, ExxonMobil, Exxon Mobil, XOM]
+  - ticker: CVX
+    name: Chevron Corporation
+    sector: Energy
+    aliases: [Chevron, CVX]
+  - ticker: MRK
+    name: Merck & Co. Inc.
+    sector: Health Care
+    aliases: [Merck & Co, Merck and Co, MRK]
+    # Merck KGaA (Germany) is a different company
+    ambiguous_aliases: ['re:Merck(?!\s+KGaA)']
+    products: [Keytruda, Gardasil]
+  - ticker: ABBV
+    name: AbbVie Inc.
+    sector: Health Care
+    aliases: [AbbVie, ABBV]
+    products: [Humira, Skyrizi, Rinvoq]
+  - ticker: BA
+    name: The Boeing Company
+    sector: Industrials
+    aliases: [Boeing]
+    ambiguous_aliases: [BA]
+    products: [737 MAX, 787 Dreamliner, Starliner]
+  - ticker: CAT
+    name: Caterpillar Inc.
+    sector: Industrials
+    aliases: [Caterpillar Inc]
+    ambiguous_aliases: [Caterpillar, CAT]
+  - ticker: KO
+    name: The Coca-Cola Company
+    sector: Consumer Staples
+    aliases: [Coca-Cola, Coca Cola, Coke]
+    ambiguous_aliases: [KO]
+  - ticker: WMT
+    name: Walmart Inc.
+    sector: Consumer Staples
+    aliases: [Walmart, Wal-Mart, WMT]
+    products: [Sam's Club]
+  - ticker: NEE
+    name: NextEra Energy Inc.
+    sector: Utilities
+    aliases: [NextEra, NextEra Energy, Florida Power & Light, NEE]
+  - ticker: DOW
+    name: Dow Inc.
+    sector: Materials
+    aliases: [Dow Inc, Dow Chemical]
+    # bare "Dow" almost always means the Dow Jones index, so only explicit names link
+  - ticker: AMT
+    name: American Tower Corporation
+    sector: Real Estate
+    aliases: [American Tower]
+    # AMT is also the alternative minimum tax
+    ambiguous_aliases: [AMT]
+
+# Market proxies used for event studies (market model) and macro impact
+benchmarks:
+  market: SPY
+  sector_etfs:
+    Information Technology: XLK
+    Communication Services: XLC
+    Consumer Discretionary: XLY
+    Financials: XLF
+    Energy: XLE
+    Health Care: XLV
+    Industrials: XLI
+    Consumer Staples: XLP
+    Utilities: XLU
+    Materials: XLB
+    Real Estate: XLRE

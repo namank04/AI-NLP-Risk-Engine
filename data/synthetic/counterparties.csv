@@ -1,0 +1,81 @@
+counterparty,ticker,sector,country,rating,listed_in_universe,pd_1y
+Apple Inc.,AAPL,Information Technology,US,A,True,0.0006
+Microsoft Corporation,MSFT,Information Technology,US,BBB,True,0.0018
+NVIDIA Corporation,NVDA,Information Technology,US,BBB,True,0.0018
+Alphabet Inc.,GOOGL,Communication Services,US,AA,True,0.0002
+The Walt Disney Company,DIS,Communication Services,US,A,True,0.0006
+Tesla Inc.,TSLA,Consumer Discretionary,US,BBB,True,0.0018
+Nike Inc.,NKE,Consumer Discretionary,US,AAA,True,0.0001
+The Goldman Sachs Group Inc.,GS,Financials,US,BBB,True,0.0018
+Wells Fargo & Company,WFC,Financials,US,BBB,True,0.0018
+Exxon Mobil Corporation,XOM,Energy,US,A,True,0.0006
+Chevron Corporation,CVX,Energy,US,A,True,0.0006
+Merck & Co. Inc.,MRK,Health Care,US,A,True,0.0006
+AbbVie Inc.,ABBV,Health Care,US,A,True,0.0006
+The Boeing Company,BA,Industrials,US,A,True,0.0006
+Caterpillar Inc.,CAT,Industrials,US,A,True,0.0006
+The Coca-Cola Company,KO,Consumer Staples,US,A,True,0.0006
+Walmart Inc.,WMT,Consumer Staples,US,BB,True,0.007
+NextEra Energy Inc.,NEE,Utilities,US,BBB,True,0.0018
+Dow Inc.,DOW,Materials,US,A,True,0.0006
+American Tower Corporation,AMT,Real Estate,US,BB,True,0.007
+Harbor Health,,Health Care,US,BB,False,0.007
+Bluecrest Media,,Communication Services,US,BBB,False,0.0018
+Pioneer Ridge Properties,,Real Estate,BR,BB,False,0.007
+Falcon Energy,,Energy,US,A,False,0.0006
+Northwind Properties,,Real Estate,US,BB,False,0.007
+Redwood Materials,,Materials,US,AAA,False,0.0001
+Keystone Industries,,Industrials,US,BBB,False,0.0018
+Highgate Properties,,Real Estate,EU,B,False,0.03
+Atlas Foods,,Consumer Staples,JP,A,False,0.0006
+Falcon Retail,,Consumer Discretionary,EU,B,False,0.03
+Granite Foods,,Consumer Staples,EU,AA,False,0.0002
+Meridian Foods,,Consumer Staples,US,A,False,0.0006
+Keystone Energy,,Energy,US,CCC,False,0.25
+Crescent Energy,,Energy,EU,BB,False,0.007
+Sterling Industries,,Industrials,US,BBB,False,0.0018
+Harbor Capital,,Financials,US,A,False,0.0006
+Sable Energy,,Energy,US,BB,False,0.007
+Cobalt Systems,,Information Technology,IN,BB,False,0.007
+Silverline Health,,Health Care,IN,B,False,0.03
+Highgate Industries,,Industrials,EU,A,False,0.0006
+Redwood Industries,,Industrials,MX,BBB,False,0.0018
+Redwood Systems,,Information Technology,BR,BB,False,0.007
+Evergreen Industries,,Industrials,US,BBB,False,0.0018
+Harbor Retail,,Consumer Discretionary,US,B,False,0.03
+Pioneer Ridge Industries,,Industrials,EU,BBB,False,0.0018
+Vertex Energy,,Energy,US,BBB,False,0.0018
+Northwind Power,,Utilities,US,CCC,False,0.25
+Atlas Media,,Communication Services,US,BBB,False,0.0018
+Lakeshore Energy,,Energy,US,BBB,False,0.0018
+Sterling Capital,,Financials,US,BBB,False,0.0018
+Vertex Health,,Health Care,BR,A,False,0.0006
+Copperleaf Energy,,Energy,US,BB,False,0.007
+Keystone Power,,Utilities,US,BBB,False,0.0018
+Keystone Materials,,Materials,US,BB,False,0.007
+Keystone Health,,Health Care,EU,BB,False,0.007
+Redwood Retail,,Consumer Discretionary,US,A,False,0.0006
+Granite Energy,,Energy,MX,BBB,False,0.0018
+Granite Properties,,Real Estate,US,B,False,0.03
+Aurora Retail,,Consumer Discretionary,TW,BBB,False,0.0018
+Falcon Properties,,Real Estate,BR,BB,False,0.007
+Aurora Materials,,Materials,IN,BBB,False,0.0018
+Copperleaf Foods,,Consumer Staples,US,BBB,False,0.0018
+Falcon Media,,Communication Services,SA,A,False,0.0006
+Sterling Foods,,Consumer Staples,JP,BB,False,0.007
+Sable Properties,,Real Estate,US,BBB,False,0.0018
+Redwood Power,,Utilities,US,A,False,0.0006
+Highgate Capital,,Financials,IN,A,False,0.0006
+Crescent Power,,Utilities,US,BBB,False,0.0018
+Atlas Health,,Health Care,US,CCC,False,0.25
+Pioneer Ridge Power,,Utilities,EU,BB,False,0.007
+Bluecrest Power,,Utilities,US,BB,False,0.007
+Keystone Foods,,Consumer Staples,JP,A,False,0.0006
+Highgate Power,,Utilities,EU,B,False,0.03
+Bluecrest Capital,,Financials,US,AA,False,0.0002
+Summit Retail,,Consumer Discretionary,US,A,False,0.0006
+Evergreen Properties,,Real Estate,US,BBB,False,0.0018
+Silverline Media,,Communication Services,GB,AA,False,0.0002
+Cobalt Health,,Health Care,MX,BBB,False,0.0018
+Atlas Energy,,Energy,EU,A,False,0.0006
+Evergreen Power,,Utilities,US,BB,False,0.007

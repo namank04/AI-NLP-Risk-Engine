@@ -1,0 +1,103 @@
+# Event taxonomy. One file drives: the zero-shot baseline (hypothesis), the LLM
+# teacher prompt (description), the labeling guidelines, the rule-based impact
+# prior (base_impact, 1-10) and Module B scenario routing (channels).
+#
+# Multi-label: a sanctions story can be Geopolitical AND Credit Event.
+# "none" exists so that chatter is not forced into a real class.
+
+classes:
+  geopolitical:
+    label: Geopolitical
+    hypothesis: This text is about war, military conflict, sanctions, trade tariffs, elections or diplomatic tensions between countries.
+    description: Armed conflict, terrorism, sanctions, export controls, tariffs and trade wars, elections and political instability, diplomatic crises.
+    subtypes: [armed_conflict, sanctions, trade_policy, election_political, diplomatic_tension, terrorism]
+    base_impact: 6
+    channels: [equity, commodity, fx, credit_spread, rates]
+
+  macroeconomic:
+    label: Macroeconomic
+    hypothesis: This text is about the economy, interest rates, central banks, inflation, unemployment or GDP.
+    description: Central bank decisions and guidance, inflation prints, labour data, GDP, PMIs, fiscal policy, sovereign debt.
+    subtypes: [central_bank, inflation, employment, growth, fiscal_policy, sovereign_debt]
+    base_impact: 5
+    channels: [rates, equity, fx, credit_spread]
+
+  credit_event:
+    label: Credit Event
+    hypothesis: This text is about a company's debt problems, a default, bankruptcy, a credit rating downgrade or debt restructuring.
+    description: Follows ISDA credit-event concepts (bankruptcy, failure to pay, restructuring, obligation acceleration, repudiation/moratorium) plus rating downgrades/outlook changes, covenant breaches and liquidity stress.
+    subtypes: [bankruptcy, failure_to_pay, restructuring, obligation_acceleration, rating_action, covenant_breach, liquidity_stress]
+    base_impact: 7
+    channels: [credit_spread, equity]
+
+  merger_acquisition:
+    label: Merger/Acquisition
+    hypothesis: This text is about a merger, an acquisition, a takeover bid or a company selling a business.
+    description: Announced, completed or terminated mergers, acquisitions, takeover bids, divestitures, spin-offs, large stake purchases.
+    subtypes: [announced, completed, terminated, divestiture, activist_stake]
+    base_impact: 6
+    channels: [equity, credit_spread]
+
+  product_launch:
+    label: Product Launch
+    hypothesis: This text is about a company launching or announcing a new product or service.
+    description: New products, services, platforms or major features; product approvals (e.g. drug approvals) count here.
+    subtypes: [launch, approval, recall_or_failure]
+    base_impact: 3
+    channels: [equity]
+
+  earnings:
+    label: Earnings
+    hypothesis: This text is about a company's quarterly earnings, revenue, profit, guidance or analyst estimates.
+    description: Earnings releases, beats/misses vs estimates, guidance changes, pre-announcements, analyst rating changes.
+    subtypes: [results, beat, miss, guidance_raise, guidance_cut, analyst_rating]
+    base_impact: 5
+    channels: [equity]
+
+  regulatory_legal:
+    label: Regulatory/Legal
+    hypothesis: This text is about a lawsuit, a regulator, a fine, an investigation or new regulation affecting a company.
+    description: Lawsuits, settlements, fines, antitrust actions, regulatory investigations, new regulation or approvals.
+    subtypes: [lawsuit, fine_settlement, investigation, antitrust, new_regulation]
+    base_impact: 5
+    channels: [equity, credit_spread]
+
+  management_change:
+    label: Management Change
+    hypothesis: This text is about a CEO, CFO or board member being appointed, resigning or being fired.
+    description: Departures and appointments of CEO/CFO/directors, succession plans, governance disputes.
+    subtypes: [departure, appointment, governance_dispute]
+    base_impact: 4
+    channels: [equity]
+
+  operational:
+    label: Operational/Supply Chain
+    hypothesis: This text is about a factory shutdown, a supply chain disruption, a cyberattack, a strike, an accident or layoffs.
+    description: Plant outages, supply-chain disruptions, cyber incidents, strikes, accidents, natural disasters affecting operations, layoffs.
+    subtypes: [supply_chain, outage_accident, cyber_incident, labour_action, layoffs, natural_disaster]
+    base_impact: 5
+    channels: [equity, commodity]
+
+  none:
+    label: None/Noise
+    hypothesis: This text is general market chatter or opinion without any specific news event.
+    description: Opinion, generic market commentary, price-action chatter, promotion, or text with no identifiable event.
+    subtypes: []
+    base_impact: 1
+    channels: []
+
+# SEC 8-K item codes are free, authoritative event labels.
+edgar_8k_items:
+  "1.01": merger_acquisition     # entry into a material definitive agreement (often M&A)
+  "1.02": merger_acquisition     # termination of a material definitive agreement
+  "1.03": credit_event           # bankruptcy or receivership
+  "1.05": operational            # material cybersecurity incident
+  "2.01": merger_acquisition     # completion of acquisition or disposition of assets
+  "2.02": earnings               # results of operations and financial condition
+  "2.04": credit_event           # triggering events that accelerate a direct financial obligation
+  "2.05": operational            # costs associated with exit or disposal activities (restructuring/layoffs)
+  "2.06": credit_event           # material impairments
+  "3.01": credit_event           # notice of delisting / failure to satisfy listing rule
+  "4.01": regulatory_legal       # changes in certifying accountant
+  "4.02": regulatory_legal       # non-reliance on previously issued financial statements
+  "5.02": management_change      # departure/appointment of directors or officers

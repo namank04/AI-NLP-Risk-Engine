@@ -1,0 +1,409 @@
+position_id,instrument,counterparty,ticker,sector,country,currency,rating_orig,rating,direction,book,notional,maturity,lgd,spread_bps,drawn,undrawn,seniority,pd_1y,coupon,mod_duration,convexity,market_value,hedge_ratio,dv01,cs01
+P0000,equity,Wells Fargo & Company,WFC,Financials,US,USD,BBB,BBB,1,trading,57.63,0.0,0.0,0.0,,,,0.0018,,0.0,0.0,57.63,,0.0,0.0
+P0001,irs,Granite Foods,,Consumer Staples,EU,EUR,AA,AA,-1,trading,246.74,6.42,0.45,0.0,,,,0.0002,0.025,5.85929842705146,41.4228946436877,0.0,,-0.14457340780256292,0.0
+P0002,term_loan,Nike Inc.,NKE,Consumer Discretionary,US,USD,AAA,AAA,1,banking,79.48,5.12,0.45,32.0,79.48,0.0,senior_unsecured,0.0001,,0.0,0.0,79.48,,0.0,0.0
+P0003,term_loan,Merck & Co. Inc.,MRK,Health Care,US,USD,A,A,1,banking,95.19,6.64,0.25,64.0,95.19,0.0,senior_secured,0.0006,,0.0,0.0,95.19,,0.0,0.0
+P0004,term_loan,Granite Properties,,Real Estate,US,USD,B,B,1,banking,52.93,5.89,0.21874999999999997,320.0,52.93,0.0,senior_secured,0.03,,0.0,0.0,52.93,,0.0,0.0
+P0005,term_loan,Granite Energy,,Energy,MX,USD,BBB,BBB,1,banking,257.05,4.3,0.25,104.0,257.05,0.0,senior_secured,0.0018,,0.0,0.0,257.05,,0.0,0.0
+P0006,corp_bond,Redwood Industries,,Industrials,MX,MXN,BBB,BBB,1,trading,53.79,10.18,0.45,130.0,,,senior_unsecured,0.0018,0.11,6.075204624345075,52.176414388103915,53.79,,0.0,0.0
+P0007,irs,Nike Inc.,NKE,Consumer Discretionary,US,USD,AAA,AAA,-1,trading,123.23,15.64,0.45,0.0,,,,0.0001,0.04,11.419095408922553,164.9284030033255,0.0,,-0.1407231944372056,0.0
+P0008,term_loan,Vertex Health,,Health Care,BR,USD,A,A,1,banking,215.56,5.35,0.25,64.0,215.56,0.0,senior_secured,0.0006,,0.0,0.0,215.56,,0.0,0.0
+P0009,fx_forward,Merck & Co. Inc.,MRK,Health Care,US,JPY,A,A,-1,trading,371.12,0.61,0.45,0.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.0
+P0010,irs,Aurora Retail,,Consumer Discretionary,TW,TWD,BBB,BBB,-1,trading,162.02,7.18,0.45,0.0,,,,0.0018,0.015,6.753524579541567,53.53973277952131,0.0,,-0.10941927191460038,0.0
+P0011,term_loan,Northwind Properties,,Real Estate,US,USD,BB,BB,1,banking,95.91,2.32,0.21874999999999997,200.0,95.91,0.0,senior_secured,0.007,,0.0,0.0,95.91,,0.0,0.0
+P0012,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,764.89,27.75,0.4,0.0,,,senior_unsecured,0.0002,0.04,16.404499572694515,373.8188759315624,764.89,,0.0,0.0
+P0013,fx_forward,The Boeing Company,BA,Industrials,US,CNY,A,A,-1,trading,83.8,0.47,0.45,0.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.0
+P0014,term_loan,Atlas Health,,Health Care,US,USD,CCC,CCC,1,banking,38.64,5.83,0.45,720.0,38.64,0.0,senior_unsecured,0.25,,0.0,0.0,38.64,,0.0,0.0
+P0015,corp_bond,Bluecrest Power,,Utilities,US,USD,BB,BB,1,trading,131.39,2.07,0.39374999999999993,250.0,,,senior_unsecured,0.007,0.065,1.8782252261683774,5.342819194683461,131.39,,0.0,0.0
+P0016,corp_bond,Highgate Industries,,Industrials,EU,EUR,A,A,1,trading,20.25,5.44,0.25,80.0,,,senior_secured,0.0006,0.035,4.884945046060702,29.647333899922547,20.25,,0.0,0.0
+P0017,corp_bond,Redwood Systems,,Information Technology,BR,USD,BB,BB,1,trading,145.6,6.16,0.45,250.0,,,senior_unsecured,0.007,0.065,4.9602434527137405,31.536367371528065,145.6,,0.0,0.0
+P0018,term_loan,Keystone Energy,,Energy,US,USD,CCC,CCC,1,banking,42.93,1.92,0.25,720.0,42.93,0.0,senior_secured,0.25,,0.0,0.0,42.93,,0.0,0.0
+P0019,corp_bond,Alphabet Inc.,GOOGL,Communication Services,US,USD,AA,AA,1,trading,91.12,10.41,0.45,55.0,,,senior_unsecured,0.0002,0.05,8.036978159893145,81.05357637561178,91.12,,0.0,0.0
+P0020,corp_bond,Falcon Media,,Communication Services,SA,USD,A,A,1,trading,122.39,9.16,0.45,80.0,,,senior_unsecured,0.0006,0.05,7.2459029737028935,65.6037306897652,122.39,,0.0,0.0
+P0021,irs,Redwood Materials,,Materials,US,USD,AAA,AAA,-1,trading,172.73,4.99,0.45,0.0,,,,0.0001,0.04,4.4333791326130365,24.817744969832432,0.0,,-0.07657951416388702,0.0
+P0022,irs,Sterling Capital,,Financials,US,USD,BBB,BBB,1,trading,186.24,15.21,0.45,0.0,,,,0.0018,0.04,11.223560999889715,158.60864758291575,0.0,,0.20902363299273904,0.0
+P0023,term_loan,Keystone Energy,,Energy,US,USD,CCC,CCC,1,banking,171.68,3.23,0.25,720.0,171.68,0.0,senior_secured,0.25,,0.0,0.0,171.68,,0.0,0.0
+P0024,sovereign_bond,Government of CN,,Sovereign,CN,CNY,A,A,1,trading,931.47,3.94,0.4,64.0,,,senior_unsecured,0.0006,0.02,3.7524215677791943,17.99550990785004,931.47,,0.0,0.0
+P0025,fx_forward,Keystone Health,,Health Care,EU,EUR,BB,BB,-1,trading,432.12,1.84,0.45,0.0,,,,0.007,,0.0,0.0,0.0,,0.0,0.0
+P0026,fx_forward,Alphabet Inc.,GOOGL,Communication Services,US,CNY,AA,AA,1,trading,464.72,0.37,0.45,0.0,,,,0.0002,,0.0,0.0,0.0,,0.0,0.0
+P0027,term_loan,Falcon Media,,Communication Services,SA,USD,A,A,1,banking,142.55,5.47,0.45,64.0,142.55,0.0,senior_unsecured,0.0006,,0.0,0.0,142.55,,0.0,0.0
+P0028,term_loan,The Boeing Company,BA,Industrials,US,USD,A,A,1,banking,294.99,3.12,0.25,64.0,294.99,0.0,senior_secured,0.0006,,0.0,0.0,294.99,,0.0,0.0
+P0029,corp_bond,Aurora Materials,,Materials,IN,INR,BBB,BBB,1,trading,119.4,2.17,0.45,130.0,,,senior_unsecured,0.0018,0.08,1.92123390790503,5.544806021343009,119.4,,0.0,0.0
+P0030,term_loan,Aurora Materials,,Materials,IN,USD,BBB,BBB,1,banking,205.29,3.73,0.25,104.0,205.29,0.0,senior_secured,0.0018,,0.0,0.0,205.29,,0.0,0.0
+P0031,corp_bond,American Tower Corporation,AMT,Real Estate,US,USD,BB,BB,1,trading,49.83,2.68,0.21874999999999997,250.0,,,senior_secured,0.007,0.065,2.381124492309287,8.05626306592293,49.83,,0.0,0.0
+P0032,cds,Redwood Industries,,Industrials,MX,MXN,BBB,BBB,1,trading,87.39,5.0,0.6,130.0,,,,0.0018,,0.0,0.0,0.0,,0.0,0.03757737218303624
+P0033,revolver,Aurora Retail,,Consumer Discretionary,TW,TWD,BBB,BBB,1,banking,165.13,5.0,0.45,91.0,49.91,115.21,senior_unsecured,0.0018,,0.0,0.0,49.91,,0.0,0.0
+P0034,term_loan,Pioneer Ridge Properties,,Real Estate,BR,USD,BB,BB,1,banking,277.06,6.32,0.21874999999999997,200.0,277.06,0.0,senior_secured,0.007,,0.0,0.0,277.06,,0.0,0.0
+P0035,revolver,Meridian Foods,,Consumer Staples,US,USD,A,A,1,banking,112.79,2.52,0.45,56.0,35.97,76.81,senior_unsecured,0.0006,,0.0,0.0,35.97,,0.0,0.0
+P0036,corp_bond,Northwind Properties,,Real Estate,US,USD,BB,BB,1,trading,30.43,11.26,0.39374999999999993,250.0,,,senior_unsecured,0.007,0.065,7.837099542271027,80.61779627543149,30.43,,0.0,0.0
+P0037,term_loan,Redwood Power,,Utilities,US,USD,A,A,1,banking,214.82,6.84,0.21874999999999997,64.0,214.82,0.0,senior_secured,0.0006,,0.0,0.0,214.82,,0.0,0.0
+P0038,revolver,Silverline Health,,Health Care,IN,INR,B,B,1,banking,91.7,1.62,0.45,280.0,24.37,67.33,senior_unsecured,0.03,,0.0,0.0,24.37,,0.0,0.0
+P0039,term_loan,Alphabet Inc.,GOOGL,Communication Services,US,USD,AA,AA,1,banking,191.25,6.51,0.25,44.0,191.25,0.0,senior_secured,0.0002,,0.0,0.0,191.25,,0.0,0.0
+P0040,corp_bond,Evergreen Properties,,Real Estate,US,USD,BBB,BBB,1,trading,74.23,9.33,0.21874999999999997,130.0,,,senior_secured,0.0018,0.055,7.182850528401697,65.2331650206204,74.23,,0.0,0.0
+P0041,irs,Sterling Industries,,Industrials,US,USD,BBB,BBB,-1,trading,89.17,16.63,0.45,0.0,,,,0.0018,0.04,11.928963408579559,181.24822452738434,0.0,,-0.10636730522652063,0.0
+P0042,revolver,Falcon Retail,,Consumer Discretionary,EU,EUR,B,B,1,banking,496.4,5.0,0.45,280.0,115.67,380.73,senior_unsecured,0.03,,0.0,0.0,115.67,,0.0,0.0
+P0043,revolver,Keystone Energy,,Energy,US,USD,CCC,CCC,1,banking,475.58,5.0,0.45,630.0,136.22,339.36,senior_unsecured,0.25,,0.0,0.0,136.22,,0.0,0.0
+P0044,corp_bond,Keystone Energy,,Energy,US,USD,CCC,CCC,1,trading,115.93,8.13,0.25,900.0,,,senior_secured,0.25,0.13,4.917076164086039,34.27718383454942,115.93,,0.0,0.0
+P0045,term_loan,Evergreen Properties,,Real Estate,US,USD,BBB,BBB,1,banking,141.19,3.32,0.21874999999999997,104.0,141.19,0.0,senior_secured,0.0018,,0.0,0.0,141.19,,0.0,0.0
+P0046,term_loan,Aurora Retail,,Consumer Discretionary,TW,TWD,BBB,BBB,1,banking,208.13,4.39,0.45,104.0,208.13,0.0,senior_unsecured,0.0018,,0.0,0.0,208.13,,0.0,0.0
+P0047,term_loan,Merck & Co. Inc.,MRK,Health Care,US,USD,A,A,1,banking,85.46,2.38,0.45,64.0,85.46,0.0,senior_unsecured,0.0006,,0.0,0.0,85.46,,0.0,0.0
+P0048,revolver,Redwood Industries,,Industrials,MX,MXN,BBB,BBB,1,banking,195.43,3.25,0.45,91.0,81.72,113.71,senior_unsecured,0.0018,,0.0,0.0,81.72,,0.0,0.0
+P0049,term_loan,Pioneer Ridge Properties,,Real Estate,BR,BRL,BB,BB,1,banking,231.8,5.18,0.21874999999999997,200.0,231.8,0.0,senior_secured,0.007,,0.0,0.0,231.8,,0.0,0.0
+P0050,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,620.16,8.35,0.4,0.0,,,senior_unsecured,0.0002,0.04,6.976190527847082,59.61179404271963,620.16,,0.0,0.0
+P0051,corp_bond,Falcon Energy,,Energy,US,USD,A,A,1,trading,92.59,4.0,0.25,80.0,,,senior_secured,0.0006,0.05,3.54595050416236,16.473833531540965,92.59,,0.0,0.0
+P0052,term_loan,Dow Inc.,DOW,Materials,US,USD,A,A,1,banking,76.66,6.82,0.25,64.0,76.66,0.0,senior_secured,0.0006,,0.0,0.0,76.66,,0.0,0.0
+P0053,term_loan,Granite Energy,,Energy,MX,MXN,BBB,BBB,1,banking,100.25,6.95,0.25,104.0,100.25,0.0,senior_secured,0.0018,,0.0,0.0,100.25,,0.0,0.0
+P0054,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,569.07,18.44,0.4,0.0,,,senior_unsecured,0.0002,0.04,12.825524413282483,212.19623013375605,569.07,,0.0,0.0
+P0055,term_loan,Lakeshore Energy,,Energy,US,USD,BBB,BBB,1,banking,111.81,3.02,0.45,104.0,111.81,0.0,senior_unsecured,0.0018,,0.0,0.0,111.81,,0.0,0.0
+P0056,term_loan,Summit Retail,,Consumer Discretionary,US,USD,A,A,1,banking,41.25,4.3,0.25,64.0,41.25,0.0,senior_secured,0.0006,,0.0,0.0,41.25,,0.0,0.0
+P0057,term_loan,Apple Inc.,AAPL,Information Technology,US,USD,A,A,1,banking,39.73,3.0,0.25,64.0,39.73,0.0,senior_secured,0.0006,,0.0,0.0,39.73,,0.0,0.0
+P0058,term_loan,Redwood Industries,,Industrials,MX,USD,BBB,BBB,1,banking,218.37,2.23,0.25,104.0,218.37,0.0,senior_secured,0.0018,,0.0,0.0,218.37,,0.0,0.0
+P0059,fx_forward,NVIDIA Corporation,NVDA,Information Technology,US,JPY,BBB,BBB,-1,trading,453.96,1.36,0.45,0.0,,,,0.0018,,0.0,0.0,0.0,,0.0,0.0
+P0060,term_loan,Summit Retail,,Consumer Discretionary,US,USD,A,A,1,banking,81.37,1.17,0.25,64.0,81.37,0.0,senior_secured,0.0006,,0.0,0.0,81.37,,0.0,0.0
+P0061,term_loan,The Goldman Sachs Group Inc.,GS,Financials,US,USD,BBB,BBB,1,banking,197.3,1.76,0.28125,104.0,197.3,0.0,senior_secured,0.0018,,0.0,0.0,197.3,,0.0,0.0
+P0062,irs,Walmart Inc.,WMT,Consumer Staples,US,USD,BB,BB,1,trading,133.86,7.99,0.45,0.0,,,,0.007,0.04,6.705239986003614,55.192438889270875,0.0,,0.08975842502151819,0.0
+P0063,corp_bond,Caterpillar Inc.,CAT,Industrials,US,USD,A,A,1,trading,86.6,10.03,0.45,80.0,,,senior_unsecured,0.0006,0.05,7.791661698377583,76.07121859313419,86.6,,0.0,0.0
+P0064,term_loan,Nike Inc.,NKE,Consumer Discretionary,US,USD,AAA,AAA,1,banking,183.42,2.56,0.25,32.0,183.42,0.0,senior_secured,0.0001,,0.0,0.0,183.42,,0.0,0.0
+P0065,revolver,Aurora Retail,,Consumer Discretionary,TW,USD,BBB,BBB,1,banking,56.81,4.11,0.45,91.0,30.98,25.83,senior_unsecured,0.0018,,0.0,0.0,30.98,,0.0,0.0
+P0066,fx_forward,Silverline Media,,Communication Services,GB,GBP,AA,AA,-1,trading,361.88,1.67,0.45,0.0,,,,0.0002,,0.0,0.0,0.0,,0.0,0.0
+P0067,revolver,Falcon Media,,Communication Services,SA,USD,A,A,1,banking,433.12,1.21,0.45,56.0,255.04,178.08,senior_unsecured,0.0006,,0.0,0.0,255.04,,0.0,0.0
+P0068,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,554.64,1.24,0.4,0.0,,,senior_unsecured,0.0002,0.04,1.181407106438847,2.5314201833050856,554.64,,0.0,0.0
+P0069,term_loan,American Tower Corporation,AMT,Real Estate,US,USD,BB,BB,1,banking,219.49,2.2,0.21874999999999997,200.0,219.49,0.0,senior_secured,0.007,,0.0,0.0,219.49,,0.0,0.0
+P0070,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,352.35,28.23,0.4,0.0,,,senior_unsecured,0.0002,0.04,16.625458603581748,384.6533808063337,352.35,,0.0,0.0
+P0071,sovereign_bond,Government of TW,,Sovereign,TW,TWD,AA,AA,1,trading,621.25,2.58,0.4,44.0,,,senior_unsecured,0.0002,0.015,2.5082263379558905,8.799252578687916,621.25,,0.0,0.0
+P0072,irs,Keystone Power,,Utilities,US,USD,BBB,BBB,-1,trading,287.82,19.08,0.45,0.0,,,,0.0018,0.04,13.157251872434522,224.10447856620013,0.0,,-0.37869215447450566,0.0
+P0073,corp_bond,American Tower Corporation,AMT,Real Estate,US,USD,BB,BB,1,trading,126.76,10.11,0.21874999999999997,250.0,,,senior_secured,0.007,0.065,7.27921373018767,68.80143426165567,126.76,,0.0,0.0
+P0074,revolver,Exxon Mobil Corporation,XOM,Energy,US,USD,A,A,1,banking,144.53,4.46,0.45,56.0,73.55,70.98,senior_unsecured,0.0006,,0.0,0.0,73.55,,0.0,0.0
+P0075,term_loan,Crescent Energy,,Energy,EU,EUR,BB,BB,1,banking,151.91,2.17,0.45,200.0,151.91,0.0,senior_unsecured,0.007,,0.0,0.0,151.91,,0.0,0.0
+P0076,corp_bond,Microsoft Corporation,MSFT,Information Technology,US,USD,BBB,BBB,1,trading,17.97,7.57,0.75,130.0,,,subordinated,0.0018,0.055,6.0720426482682734,46.46252835952472,17.97,,0.0,0.0
+P0077,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,586.06,12.06,0.4,0.0,,,senior_unsecured,0.0002,0.04,9.429154585977376,109.81334595509247,586.06,,0.0,0.0
+P0078,term_loan,Keystone Power,,Utilities,US,USD,BBB,BBB,1,banking,203.91,2.78,0.39374999999999993,104.0,203.91,0.0,senior_unsecured,0.0018,,0.0,0.0,203.91,,0.0,0.0
+P0079,term_loan,Summit Retail,,Consumer Discretionary,US,USD,A,A,1,banking,158.04,6.76,0.75,64.0,158.04,0.0,subordinated,0.0006,,0.0,0.0,158.04,,0.0,0.0
+P0080,corp_bond,The Boeing Company,BA,Industrials,US,USD,A,A,1,trading,50.58,12.44,0.45,80.0,,,senior_unsecured,0.0006,0.05,9.138380159439738,106.32837629051649,50.58,,0.0,0.0
+P0081,sovereign_bond,Government of EU,,Sovereign,EU,EUR,AA,AA,1,trading,933.28,2.58,0.4,0.0,,,senior_unsecured,0.0002,0.025,2.464047158743751,8.535467677249748,933.28,,0.0,0.0
+P0082,fx_forward,Pioneer Ridge Properties,,Real Estate,BR,MXN,BB,BB,1,trading,81.24,0.7,0.45,0.0,,,,0.007,,0.0,0.0,0.0,,0.0,0.0
+P0083,term_loan,Crescent Energy,,Energy,EU,EUR,BB,BB,1,banking,289.43,5.02,0.25,200.0,289.43,0.0,senior_secured,0.007,,0.0,0.0,289.43,,0.0,0.0
+P0084,term_loan,Sterling Capital,,Financials,US,USD,BBB,BBB,1,banking,245.85,6.34,0.84375,104.0,245.85,0.0,subordinated,0.0018,,0.0,0.0,245.85,,0.0,0.0
+P0085,irs,Sable Properties,,Real Estate,US,USD,BBB,BBB,1,trading,267.26,17.8,0.45,0.0,,,,0.0018,0.04,12.489861498604704,200.55008145596622,0.0,,0.3338070850534581,0.0
+P0086,corp_bond,Tesla Inc.,TSLA,Consumer Discretionary,US,USD,BBB,BBB,1,trading,82.73,5.78,0.45,130.0,,,senior_unsecured,0.0018,0.055,4.84175042618957,29.78580221535731,82.73,,0.0,0.0
+P0087,sovereign_bond,Government of CN,,Sovereign,CN,CNY,A,A,1,trading,930.16,5.11,0.4,64.0,,,senior_unsecured,0.0006,0.02,4.8142850750525445,28.449300776899854,930.16,,0.0,0.0
+P0088,equity,Apple Inc.,AAPL,Information Technology,US,USD,A,A,1,trading,23.2,0.0,0.0,0.0,,,,0.0006,,0.0,0.0,23.2,,0.0,0.0
+P0089,cds,Atlas Health,,Health Care,US,USD,CCC,CCC,-1,trading,60.98,5.0,0.6,900.0,,,,0.25,,0.0,0.0,0.0,,0.0,-0.026222352338221407
+P0090,irs,Northwind Power,,Utilities,US,USD,CCC,CCC,-1,trading,165.85,18.28,0.45,0.0,,,,0.25,0.04,12.765220990906203,209.82331877037547,0.0,,-0.2117156708482352,0.0
+P0091,sovereign_bond,Government of BR,,Sovereign,BR,BRL,BB,BB,1,trading,454.67,15.65,0.4,200.0,,,senior_unsecured,0.007,0.12,6.968673190539406,76.69885786690297,454.67,,0.0,0.0
+P0092,revolver,Northwind Properties,,Real Estate,US,USD,BB,BB,1,banking,111.58,1.57,0.45,175.0,66.43,45.15,senior_unsecured,0.007,,0.0,0.0,66.43,,0.0,0.0
+P0093,corp_bond,Bluecrest Power,,Utilities,US,USD,BB,BB,1,trading,144.25,2.2,0.21874999999999997,250.0,,,senior_secured,0.007,0.065,1.9857917873478628,5.874595792890519,144.25,,0.0,0.0
+P0094,term_loan,Keystone Health,,Health Care,EU,EUR,BB,BB,1,banking,152.15,1.52,0.25,200.0,152.15,0.0,senior_secured,0.007,,0.0,0.0,152.15,,0.0,0.0
+P0095,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,829.86,24.33,0.4,0.0,,,senior_unsecured,0.0002,0.04,15.289495273017822,315.64237316008587,829.86,,0.0,0.0
+P0096,sovereign_bond,Government of EU,,Sovereign,EU,EUR,AA,AA,1,trading,485.46,26.05,0.4,0.0,,,senior_unsecured,0.0002,0.025,18.9664473548999,449.1280939642092,485.46,,0.0,0.0
+P0097,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,607.2,23.23,0.4,0.0,,,senior_unsecured,0.0002,0.04,14.887558554828045,296.56305219691905,607.2,,0.0,0.0
+P0098,revolver,Evergreen Industries,,Industrials,US,USD,BBB,BBB,1,banking,373.97,5.0,0.45,91.0,116.63,257.34,senior_unsecured,0.0018,,0.0,0.0,116.63,,0.0,0.0
+P0099,revolver,Aurora Retail,,Consumer Discretionary,TW,USD,BBB,BBB,1,banking,337.83,2.05,0.45,91.0,155.21,182.63,senior_unsecured,0.0018,,0.0,0.0,155.21,,0.0,0.0
+P0100,revolver,Evergreen Power,,Utilities,US,USD,BB,BB,1,banking,259.2,3.81,0.45,175.0,62.81,196.39,senior_unsecured,0.007,,0.0,0.0,62.81,,0.0,0.0
+P0101,term_loan,Redwood Systems,,Information Technology,BR,USD,BB,BB,1,banking,134.62,5.17,0.25,200.0,134.62,0.0,senior_secured,0.007,,0.0,0.0,134.62,,0.0,0.0
+P0102,irs,Sterling Capital,,Financials,US,USD,BBB,BBB,-1,trading,298.63,12.89,0.45,0.0,,,,0.0018,0.04,9.878635079781183,121.40000195054795,0.0,,-0.29500903963694736,0.0
+P0103,corp_bond,Crescent Energy,,Energy,EU,EUR,BB,BB,1,trading,86.85,4.41,0.45,250.0,,,senior_unsecured,0.007,0.05,3.8706177182870576,19.36498664910112,86.85,,0.0,0.0
+P0104,revolver,Tesla Inc.,TSLA,Consumer Discretionary,US,USD,BBB,BBB,1,banking,321.0,2.83,0.45,91.0,164.09,156.91,senior_unsecured,0.0018,,0.0,0.0,164.09,,0.0,0.0
+P0105,corp_bond,Copperleaf Energy,,Energy,US,USD,BB,BB,1,trading,10.83,6.84,0.25,250.0,,,senior_secured,0.007,0.065,5.372336347067455,37.05050172625577,10.83,,0.0,0.0
+P0106,sovereign_bond,Government of IN,,Sovereign,IN,INR,BBB,BBB,1,trading,687.25,9.52,0.4,104.0,,,senior_unsecured,0.0018,0.07,6.845477273218515,61.149796572123414,687.25,,0.0,0.0
+P0107,revolver,Harbor Health,,Health Care,US,USD,BB,BB,1,banking,87.24,5.0,0.45,175.0,13.91,73.33,senior_unsecured,0.007,,0.0,0.0,13.91,,0.0,0.0
+P0108,irs,Falcon Media,,Communication Services,SA,USD,A,A,-1,trading,178.36,7.35,0.45,0.0,,,,0.0006,0.04,6.25550195841624,48.05794577176274,0.0,,-0.11157220174559168,0.0
+P0109,fx_forward,Harbor Retail,,Consumer Discretionary,US,INR,B,B,1,trading,316.56,1.97,0.45,0.0,,,,0.03,,0.0,0.0,0.0,,0.0,0.0
+P0110,revolver,NVIDIA Corporation,NVDA,Information Technology,US,USD,BBB,BBB,1,banking,443.08,1.58,0.45,91.0,173.26,269.82,senior_unsecured,0.0018,,0.0,0.0,173.26,,0.0,0.0
+P0111,term_loan,Sable Energy,,Energy,US,USD,BB,BB,1,banking,263.39,5.72,0.45,200.0,263.39,0.0,senior_unsecured,0.007,,0.0,0.0,263.39,,0.0,0.0
+P0112,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,392.3,18.15,0.4,0.0,,,senior_unsecured,0.0002,0.04,12.71585298148735,207.8991403019573,392.3,,0.0,0.0
+P0113,equity,Dow Inc.,DOW,Materials,US,USD,A,A,1,trading,23.54,0.0,0.0,0.0,,,,0.0006,,0.0,0.0,23.54,,0.0,0.0
+P0114,term_loan,Microsoft Corporation,MSFT,Information Technology,US,USD,BBB,BBB,1,banking,173.97,5.91,0.25,104.0,173.97,0.0,senior_secured,0.0018,,0.0,0.0,173.97,,0.0,0.0
+P0115,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,178.4,14.41,0.4,0.0,,,senior_unsecured,0.0002,0.04,10.77288257999122,145.45929914399176,178.4,,0.0,0.0
+P0116,irs,Redwood Industries,,Industrials,MX,USD,BBB,BBB,-1,trading,160.02,8.92,0.45,0.0,,,,0.0018,0.04,7.357319907722544,66.39637046973753,0.0,,-0.11773129016358169,0.0
+P0117,cds,Northwind Power,,Utilities,US,USD,CCC,CCC,1,trading,84.17,5.0,0.6,900.0,,,,0.25,,0.0,0.0,0.0,,0.0,0.036191562454100205
+P0118,term_loan,Pioneer Ridge Properties,,Real Estate,BR,USD,BB,BB,1,banking,248.08,3.83,0.39374999999999993,200.0,248.08,0.0,senior_unsecured,0.007,,0.0,0.0,248.08,,0.0,0.0
+P0119,term_loan,Sterling Capital,,Financials,US,USD,BBB,BBB,1,banking,99.1,6.78,0.50625,104.0,99.1,0.0,senior_unsecured,0.0018,,0.0,0.0,99.1,,0.0,0.0
+P0120,equity,NVIDIA Corporation,NVDA,Information Technology,US,USD,BBB,BBB,1,trading,69.32,0.0,0.0,0.0,,,,0.0018,,0.0,0.0,69.32,,0.0,0.0
+P0121,term_loan,Wells Fargo & Company,WFC,Financials,US,USD,BBB,BBB,1,banking,240.17,1.52,0.50625,104.0,240.17,0.0,senior_unsecured,0.0018,,0.0,0.0,240.17,,0.0,0.0
+P0122,term_loan,Lakeshore Energy,,Energy,US,USD,BBB,BBB,1,banking,265.55,6.79,0.25,104.0,265.55,0.0,senior_secured,0.0018,,0.0,0.0,265.55,,0.0,0.0
+P0123,corp_bond,Pioneer Ridge Properties,,Real Estate,BR,BRL,BB,BB,1,trading,27.48,8.48,0.39374999999999993,250.0,,,senior_unsecured,0.007,0.145,4.769101334678704,33.16541231108085,27.48,,0.0,0.0
+P0124,revolver,Northwind Properties,,Real Estate,US,USD,BB,BB,1,banking,338.11,3.45,0.45,175.0,188.56,149.55,senior_unsecured,0.007,,0.0,0.0,188.56,,0.0,0.0
+P0125,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,990.53,3.52,0.4,0.0,,,senior_unsecured,0.0002,0.04,3.2155823476818433,13.708043428695834,990.53,,0.0,0.0
+P0126,term_loan,Sable Properties,,Real Estate,US,USD,BBB,BBB,1,banking,131.68,6.49,0.39374999999999993,104.0,131.68,0.0,senior_unsecured,0.0018,,0.0,0.0,131.68,,0.0,0.0
+P0127,fx_forward,Highgate Capital,,Financials,IN,GBP,A,A,-1,trading,88.16,0.61,0.45,0.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.0
+P0128,term_loan,Nike Inc.,NKE,Consumer Discretionary,US,USD,AAA,AAA,1,banking,272.05,2.76,0.45,32.0,272.05,0.0,senior_unsecured,0.0001,,0.0,0.0,272.05,,0.0,0.0
+P0129,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,448.84,28.91,0.4,0.0,,,senior_unsecured,0.0002,0.04,16.74176690815191,393.07921020574327,448.84,,0.0,0.0
+P0130,term_loan,Keystone Foods,,Consumer Staples,JP,JPY,A,A,1,banking,216.72,1.36,0.45,64.0,216.72,0.0,senior_unsecured,0.0006,,0.0,0.0,216.72,,0.0,0.0
+P0131,revolver,Granite Energy,,Energy,MX,USD,BBB,BBB,1,banking,428.77,5.0,0.45,91.0,119.7,309.07,senior_unsecured,0.0018,,0.0,0.0,119.7,,0.0,0.0
+P0132,term_loan,Bluecrest Capital,,Financials,US,USD,AA,AA,1,banking,58.34,5.36,0.28125,44.0,58.34,0.0,senior_secured,0.0002,,0.0,0.0,58.34,,0.0,0.0
+P0133,term_loan,Keystone Health,,Health Care,EU,EUR,BB,BB,1,banking,166.09,4.36,0.75,200.0,166.09,0.0,subordinated,0.007,,0.0,0.0,166.09,,0.0,0.0
+P0134,term_loan,Granite Foods,,Consumer Staples,EU,EUR,AA,AA,1,banking,299.84,2.7,0.75,44.0,299.84,0.0,subordinated,0.0002,,0.0,0.0,299.84,,0.0,0.0
+P0135,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,924.08,6.39,0.4,0.0,,,senior_unsecured,0.0002,0.04,5.535391082991249,37.874469509004314,924.08,,0.0,0.0
+P0136,revolver,Highgate Power,,Utilities,EU,EUR,B,B,1,banking,319.15,5.0,0.45,280.0,139.13,180.03,senior_unsecured,0.03,,0.0,0.0,139.13,,0.0,0.0
+P0137,term_loan,Granite Energy,,Energy,MX,MXN,BBB,BBB,1,banking,34.07,4.0,0.25,104.0,34.07,0.0,senior_secured,0.0018,,0.0,0.0,34.07,,0.0,0.0
+P0138,equity,Walmart Inc.,WMT,Consumer Staples,US,USD,BB,BB,1,trading,13.25,0.0,0.0,0.0,,,,0.007,,0.0,0.0,13.25,,0.0,0.0
+P0139,fx_forward,Sterling Capital,,Financials,US,BRL,BBB,BBB,1,trading,289.95,0.34,0.45,0.0,,,,0.0018,,0.0,0.0,0.0,,0.0,0.0
+P0140,fx_forward,Bluecrest Power,,Utilities,US,MXN,BB,BB,1,trading,296.05,1.51,0.45,0.0,,,,0.007,,0.0,0.0,0.0,,0.0,0.0
+P0141,term_loan,Summit Retail,,Consumer Discretionary,US,USD,A,A,1,banking,41.1,3.08,0.45,64.0,41.1,0.0,senior_unsecured,0.0006,,0.0,0.0,41.1,,0.0,0.0
+P0142,revolver,Falcon Energy,,Energy,US,USD,A,A,1,banking,398.61,1.1,0.45,56.0,74.97,323.64,senior_unsecured,0.0006,,0.0,0.0,74.97,,0.0,0.0
+P0143,term_loan,Granite Energy,,Energy,MX,USD,BBB,BBB,1,banking,297.07,4.69,0.45,104.0,297.07,0.0,senior_unsecured,0.0018,,0.0,0.0,297.07,,0.0,0.0
+P0144,term_loan,Highgate Industries,,Industrials,EU,EUR,A,A,1,banking,150.68,5.29,0.25,64.0,150.68,0.0,senior_secured,0.0006,,0.0,0.0,150.68,,0.0,0.0
+P0145,term_loan,Keystone Health,,Health Care,EU,EUR,BB,BB,1,banking,158.15,3.19,0.25,200.0,158.15,0.0,senior_secured,0.007,,0.0,0.0,158.15,,0.0,0.0
+P0146,corp_bond,Highgate Power,,Utilities,EU,EUR,B,B,1,trading,71.63,5.81,0.21874999999999997,400.0,,,senior_secured,0.03,0.065,4.710900501372755,28.572386433602585,71.63,,0.0,0.0
+P0147,term_loan,Pioneer Ridge Properties,,Real Estate,BR,USD,BB,BB,1,banking,193.36,3.06,0.39374999999999993,200.0,193.36,0.0,senior_unsecured,0.007,,0.0,0.0,193.36,,0.0,0.0
+P0148,term_loan,The Boeing Company,BA,Industrials,US,USD,A,A,1,banking,144.2,4.33,0.25,64.0,144.2,0.0,senior_secured,0.0006,,0.0,0.0,144.2,,0.0,0.0
+P0149,fx_forward,Highgate Power,,Utilities,EU,EUR,B,B,-1,trading,112.38,1.94,0.45,0.0,,,,0.03,,0.0,0.0,0.0,,0.0,0.0
+P0150,revolver,Keystone Materials,,Materials,US,USD,BB,BB,1,banking,441.64,4.81,0.45,175.0,116.2,325.44,senior_unsecured,0.007,,0.0,0.0,116.2,,0.0,0.0
+P0151,term_loan,Sterling Foods,,Consumer Staples,JP,JPY,BB,BB,1,banking,210.82,4.05,0.25,200.0,210.82,0.0,senior_secured,0.007,,0.0,0.0,210.82,,0.0,0.0
+P0152,corp_bond,Granite Energy,,Energy,MX,MXN,BBB,BBB,1,trading,123.25,10.65,0.25,130.0,,,senior_secured,0.0018,0.11,6.1734056748390636,54.483981212768796,123.25,,0.0,0.0
+P0153,term_loan,Dow Inc.,DOW,Materials,US,USD,A,A,1,banking,205.5,1.5,0.45,64.0,205.5,0.0,senior_unsecured,0.0006,,0.0,0.0,205.5,,0.0,0.0
+P0154,corp_bond,Redwood Materials,,Materials,US,USD,AAA,AAA,1,trading,72.58,4.93,0.45,40.0,,,senior_unsecured,0.0001,0.045,4.3297041325212655,23.83408043135169,72.58,,0.0,0.0
+P0155,term_loan,Redwood Power,,Utilities,US,USD,A,A,1,banking,121.97,5.47,0.39374999999999993,64.0,121.97,0.0,senior_unsecured,0.0006,,0.0,0.0,121.97,,0.0,0.0
+P0156,corp_bond,Aurora Retail,,Consumer Discretionary,TW,TWD,BBB,BBB,1,trading,139.05,13.54,0.45,130.0,,,senior_unsecured,0.0018,0.03,11.036523575050097,146.46885764903473,139.05,,0.0,0.0
+P0157,corp_bond,Apple Inc.,AAPL,Information Technology,US,USD,A,A,1,trading,107.61,6.93,0.45,80.0,,,senior_unsecured,0.0006,0.05,5.738824212905747,41.25448239570162,107.61,,0.0,0.0
+P0158,corp_bond,The Walt Disney Company,DIS,Communication Services,US,USD,A,A,1,trading,84.27,11.03,0.25,80.0,,,senior_secured,0.0006,0.05,8.38323499916418,88.5166634097494,84.27,,0.0,0.0
+P0159,revolver,Apple Inc.,AAPL,Information Technology,US,USD,A,A,1,banking,354.8,3.3,0.45,56.0,96.75,258.05,senior_unsecured,0.0006,,0.0,0.0,96.75,,0.0,0.0
+P0160,irs,Copperleaf Energy,,Energy,US,USD,BB,BB,1,trading,190.7,2.32,0.45,0.0,,,,0.007,0.04,2.1677515082510275,6.839839792786311,0.0,,0.04133894344969066,0.0
+P0161,fx_forward,Highgate Industries,,Industrials,EU,EUR,A,A,-1,trading,83.2,1.4,0.45,0.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.0
+P0162,term_loan,Keystone Foods,,Consumer Staples,JP,JPY,A,A,1,banking,193.67,1.63,0.25,64.0,193.67,0.0,senior_secured,0.0006,,0.0,0.0,193.67,,0.0,0.0
+P0163,term_loan,Keystone Power,,Utilities,US,USD,BBB,BBB,1,banking,121.32,1.73,0.39374999999999993,104.0,121.32,0.0,senior_unsecured,0.0018,,0.0,0.0,121.32,,0.0,0.0
+P0164,term_loan,Chevron Corporation,CVX,Energy,US,USD,A,A,1,banking,109.25,1.71,0.45,64.0,109.25,0.0,senior_unsecured,0.0006,,0.0,0.0,109.25,,0.0,0.0
+P0165,equity,Tesla Inc.,TSLA,Consumer Discretionary,US,USD,BBB,BBB,1,trading,65.35,0.0,0.0,0.0,,,,0.0018,,0.0,0.0,65.35,,0.0,0.0
+P0166,cds,Keystone Power,,Utilities,US,USD,BBB,BBB,-1,trading,75.43,5.0,0.6,130.0,,,,0.0018,,0.0,0.0,0.0,,0.0,-0.032435827446714846
+P0167,term_loan,Merck & Co. Inc.,MRK,Health Care,US,USD,A,A,1,banking,101.87,1.8,0.45,64.0,101.87,0.0,senior_unsecured,0.0006,,0.0,0.0,101.87,,0.0,0.0
+P0168,equity,Walmart Inc.,WMT,Consumer Staples,US,USD,BB,BB,1,trading,71.02,0.0,0.0,0.0,,,,0.007,,0.0,0.0,71.02,,0.0,0.0
+P0169,term_loan,Granite Energy,,Energy,MX,USD,BBB,BBB,1,banking,123.72,2.33,0.45,104.0,123.72,0.0,senior_unsecured,0.0018,,0.0,0.0,123.72,,0.0,0.0
+P0170,corp_bond,Atlas Energy,,Energy,EU,EUR,A,A,1,trading,52.26,7.14,0.45,80.0,,,senior_unsecured,0.0006,0.035,6.244954183049888,47.47156820827932,52.26,,0.0,0.0
+P0171,corp_bond,Sable Properties,,Real Estate,US,USD,BBB,BBB,1,trading,121.68,5.04,0.39374999999999993,130.0,,,senior_unsecured,0.0018,0.055,4.317834297570282,23.8644399297634,121.68,,0.0,0.0
+P0172,fx_forward,Microsoft Corporation,MSFT,Information Technology,US,GBP,BBB,BBB,1,trading,134.87,0.96,0.45,0.0,,,,0.0018,,0.0,0.0,0.0,,0.0,0.0
+P0173,term_loan,Keystone Health,,Health Care,EU,EUR,BB,BB,1,banking,149.58,1.54,0.25,200.0,149.58,0.0,senior_secured,0.007,,0.0,0.0,149.58,,0.0,0.0
+P0174,term_loan,Falcon Properties,,Real Estate,BR,BRL,BB,BB,1,banking,284.68,5.9,0.39374999999999993,200.0,284.68,0.0,senior_unsecured,0.007,,0.0,0.0,284.68,,0.0,0.0
+P0175,corp_bond,Sable Properties,,Real Estate,US,USD,BBB,BBB,1,trading,125.22,11.47,0.39374999999999993,130.0,,,senior_unsecured,0.0018,0.055,8.379557592240705,89.99610227251742,125.22,,0.0,0.0
+P0176,term_loan,Crescent Power,,Utilities,US,USD,BBB,BBB,1,banking,252.41,5.18,0.39374999999999993,104.0,252.41,0.0,senior_unsecured,0.0018,,0.0,0.0,252.41,,0.0,0.0
+P0177,term_loan,Redwood Systems,,Information Technology,BR,USD,BB,BB,1,banking,111.52,3.03,0.45,200.0,111.52,0.0,senior_unsecured,0.007,,0.0,0.0,111.52,,0.0,0.0
+P0178,revolver,Falcon Energy,,Energy,US,USD,A,A,1,banking,215.92,3.95,0.45,56.0,67.1,148.82,senior_unsecured,0.0006,,0.0,0.0,67.1,,0.0,0.0
+P0179,fx_forward,Sable Energy,,Energy,US,BRL,BB,BB,1,trading,492.82,0.63,0.45,0.0,,,,0.007,,0.0,0.0,0.0,,0.0,0.0
+P0180,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,781.95,26.1,0.4,0.0,,,senior_unsecured,0.0002,0.04,15.946360449653756,347.8755937392561,781.95,,0.0,0.0
+P0181,irs,Granite Energy,,Energy,MX,USD,BBB,BBB,-1,trading,176.43,5.51,0.45,0.0,,,,0.0018,0.04,4.850070849887517,29.398768415836184,0.0,,-0.08557111237009461,0.0
+P0182,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,305.98,28.25,0.4,0.0,,,senior_unsecured,0.0002,0.04,16.628981556241936,384.90310985877073,305.98,,0.0,0.0
+P0183,sovereign_bond,Government of IN,,Sovereign,IN,INR,BBB,BBB,1,trading,682.35,13.41,0.4,104.0,,,senior_unsecured,0.0018,0.07,8.636059862762167,100.93760502107742,682.35,,0.0,0.0
+P0184,irs,Highgate Capital,,Financials,IN,INR,A,A,1,trading,151.79,18.63,0.45,0.0,,,,0.0006,0.07,10.380437647929702,154.70941365443178,0.0,,0.15756164798034822,0.0
+P0185,corp_bond,Pioneer Ridge Industries,,Industrials,EU,EUR,BBB,BBB,1,trading,30.48,9.2,0.75,130.0,,,subordinated,0.0018,0.04,7.6112741466404525,70.82221071836008,30.48,,0.0,0.0
+P0186,sovereign_bond,Government of MX,,Sovereign,MX,MXN,BBB,BBB,1,trading,404.07,6.5,0.4,104.0,,,senior_unsecured,0.0018,0.095,4.717534583752176,29.689703750564217,404.07,,0.0,0.0
+P0187,term_loan,Crescent Power,,Utilities,US,USD,BBB,BBB,1,banking,23.27,3.77,0.39374999999999993,104.0,23.27,0.0,senior_unsecured,0.0018,,0.0,0.0,23.27,,0.0,0.0
+P0188,term_loan,Wells Fargo & Company,WFC,Financials,US,USD,BBB,BBB,1,banking,238.56,2.54,0.50625,104.0,238.56,0.0,senior_unsecured,0.0018,,0.0,0.0,238.56,,0.0,0.0
+P0189,sovereign_bond,Government of GB,,Sovereign,GB,GBP,AA,AA,1,trading,991.04,24.14,0.4,0.0,,,senior_unsecured,0.0002,0.045,14.815925007086475,299.8452570474569,991.04,,0.0,0.0
+P0190,term_loan,Highgate Industries,,Industrials,EU,EUR,A,A,1,banking,85.6,3.97,0.25,64.0,85.6,0.0,senior_secured,0.0006,,0.0,0.0,85.6,,0.0,0.0
+P0191,fx_forward,Walmart Inc.,WMT,Consumer Staples,US,EUR,BB,BB,-1,trading,481.88,1.55,0.45,0.0,,,,0.007,,0.0,0.0,0.0,,0.0,0.0
+P0192,corp_bond,Atlas Health,,Health Care,US,USD,CCC,CCC,1,trading,64.75,7.73,0.45,900.0,,,senior_unsecured,0.25,0.13,4.708760210072225,31.449331581394866,64.75,,0.0,0.0
+P0193,term_loan,Wells Fargo & Company,WFC,Financials,US,USD,BBB,BBB,1,banking,41.2,5.63,0.28125,104.0,41.2,0.0,senior_secured,0.0018,,0.0,0.0,41.2,,0.0,0.0
+P0194,cds,Falcon Energy,,Energy,US,USD,A,A,-1,trading,143.34,5.0,0.6,80.0,,,,0.0006,,0.0,0.0,0.0,,0.0,-0.061635910099199186
+P0195,term_loan,Northwind Properties,,Real Estate,US,USD,BB,BB,1,banking,106.51,2.08,0.21874999999999997,200.0,106.51,0.0,senior_secured,0.007,,0.0,0.0,106.51,,0.0,0.0
+P0196,corp_bond,Granite Properties,,Real Estate,US,USD,B,B,1,trading,149.06,10.88,0.21874999999999997,400.0,,,senior_secured,0.03,0.08,7.064428156307428,67.81025521794294,149.06,,0.0,0.0
+P0197,term_loan,Pioneer Ridge Power,,Utilities,EU,EUR,BB,BB,1,banking,278.82,5.82,0.21874999999999997,200.0,278.82,0.0,senior_secured,0.007,,0.0,0.0,278.82,,0.0,0.0
+P0198,equity,NextEra Energy Inc.,NEE,Utilities,US,USD,BBB,BBB,1,trading,54.34,0.0,0.0,0.0,,,,0.0018,,0.0,0.0,54.34,,0.0,0.0
+P0199,corp_bond,Atlas Foods,,Consumer Staples,JP,JPY,A,A,1,trading,36.7,2.04,0.45,80.0,,,senior_unsecured,0.0006,0.02,1.9796296063643246,5.879375888681138,36.7,,0.0,0.0
+P0200,irs,Apple Inc.,AAPL,Information Technology,US,USD,A,A,1,trading,297.66,3.25,0.45,0.0,,,,0.0006,0.04,2.986146902640404,11.994562030143285,0.0,,0.0888854468078388,0.0
+P0201,term_loan,Pioneer Ridge Industries,,Industrials,EU,EUR,BBB,BBB,1,banking,38.67,4.97,0.45,104.0,38.67,0.0,senior_unsecured,0.0018,,0.0,0.0,38.67,,0.0,0.0
+P0202,irs,Falcon Retail,,Consumer Discretionary,EU,EUR,B,B,1,trading,221.94,10.13,0.45,0.0,,,,0.03,0.025,8.854264568469684,92.48491616149927,0.0,,0.19651030563926303,0.0
+P0203,sovereign_bond,Government of JP,,Sovereign,JP,JPY,A,A,1,trading,581.34,3.34,0.4,0.0,,,senior_unsecured,0.0006,0.01,3.261370341977455,13.928762109783992,581.34,,0.0,0.0
+P0204,corp_bond,Cobalt Health,,Health Care,MX,MXN,BBB,BBB,1,trading,68.08,6.18,0.25,130.0,,,senior_secured,0.0018,0.11,4.3877645993948,26.025817158795743,68.08,,0.0,0.0
+P0205,cds,Dow Inc.,DOW,Materials,US,USD,A,A,1,trading,28.74,5.0,0.6,80.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.012357335478368928
+P0206,revolver,Vertex Health,,Health Care,BR,USD,A,A,1,banking,294.04,2.6,0.45,56.0,61.98,232.06,senior_unsecured,0.0006,,0.0,0.0,61.98,,0.0,0.0
+P0207,revolver,Sable Properties,,Real Estate,US,USD,BBB,BBB,1,banking,194.83,5.0,0.45,91.0,21.87,172.96,senior_unsecured,0.0018,,0.0,0.0,21.87,,0.0,0.0
+P0208,corp_bond,Merck & Co. Inc.,MRK,Health Care,US,USD,A,A,1,trading,130.14,12.38,0.25,80.0,,,senior_secured,0.0006,0.05,9.110603945422044,105.6102113056784,130.14,,0.0,0.0
+P0209,irs,Keystone Foods,,Consumer Staples,JP,JPY,A,A,-1,trading,260.57,10.3,0.45,0.0,,,,0.0006,0.01,9.718300278630338,106.82594465946732,0.0,,-0.2532328771359537,0.0
+P0210,term_loan,Bluecrest Media,,Communication Services,US,USD,BBB,BBB,1,banking,234.8,3.01,0.45,104.0,234.8,0.0,senior_unsecured,0.0018,,0.0,0.0,234.8,,0.0,0.0
+P0211,corp_bond,Falcon Properties,,Real Estate,BR,BRL,BB,BB,1,trading,74.86,14.43,0.21874999999999997,250.0,,,senior_secured,0.007,0.145,5.996599589387715,58.29549468846159,74.86,,0.0,0.0
+P0212,term_loan,Highgate Capital,,Financials,IN,USD,A,A,1,banking,209.62,5.38,0.84375,64.0,209.62,0.0,subordinated,0.0006,,0.0,0.0,209.62,,0.0,0.0
+P0213,corp_bond,Bluecrest Power,,Utilities,US,USD,BB,BB,1,trading,126.61,5.59,0.21874999999999997,250.0,,,senior_secured,0.007,0.065,4.560896613781101,26.80956336331239,126.61,,0.0,0.0
+P0214,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,751.59,1.17,0.4,0.0,,,senior_unsecured,0.0002,0.04,1.1167573512541906,2.3198465570987494,751.59,,0.0,0.0
+P0215,term_loan,Pioneer Ridge Properties,,Real Estate,BR,USD,BB,BB,1,banking,176.51,4.77,0.39374999999999993,200.0,176.51,0.0,senior_unsecured,0.007,,0.0,0.0,176.51,,0.0,0.0
+P0216,sovereign_bond,Government of CN,,Sovereign,CN,CNY,A,A,1,trading,561.64,5.67,0.4,64.0,,,senior_unsecured,0.0006,0.02,5.309878622196216,34.17997088549091,561.64,,0.0,0.0
+P0217,term_loan,Lakeshore Energy,,Energy,US,USD,BBB,BBB,1,banking,37.1,2.99,0.25,104.0,37.1,0.0,senior_secured,0.0018,,0.0,0.0,37.1,,0.0,0.0
+P0218,cds,NextEra Energy Inc.,NEE,Utilities,US,USD,BBB,BBB,1,trading,75.24,5.0,0.6,130.0,,,,0.0018,,0.0,0.0,0.0,,0.0,0.032352758152405674
+P0219,revolver,Bluecrest Media,,Communication Services,US,USD,BBB,BBB,1,banking,273.8,4.71,0.45,91.0,54.43,219.37,senior_unsecured,0.0018,,0.0,0.0,54.43,,0.0,0.0
+P0220,revolver,Keystone Industries,,Industrials,US,USD,BBB,BBB,1,banking,256.26,4.08,0.45,91.0,117.03,139.24,senior_unsecured,0.0018,,0.0,0.0,117.03,,0.0,0.0
+P0221,sovereign_bond,Government of GB,,Sovereign,GB,GBP,AA,AA,1,trading,749.02,5.56,0.4,0.0,,,senior_unsecured,0.0002,0.045,4.839712796829763,29.42207384144282,749.02,,0.0,0.0
+P0222,corp_bond,Aurora Materials,,Materials,IN,USD,BBB,BBB,1,trading,26.82,7.16,0.25,130.0,,,senior_secured,0.0018,0.055,5.817861203466393,42.60268720768616,26.82,,0.0,0.0
+P0223,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,676.98,25.31,0.4,0.0,,,senior_unsecured,0.0002,0.04,15.644954684487018,333.0291382862755,676.98,,0.0,0.0
+P0224,term_loan,Microsoft Corporation,MSFT,Information Technology,US,USD,BBB,BBB,1,banking,94.98,2.16,0.25,104.0,94.98,0.0,senior_secured,0.0018,,0.0,0.0,94.98,,0.0,0.0
+P0225,corp_bond,Pioneer Ridge Industries,,Industrials,EU,EUR,BBB,BBB,1,trading,58.15,10.52,0.25,130.0,,,senior_secured,0.0018,0.04,8.486121165977446,88.33267496347511,58.15,,0.0,0.0
+P0226,corp_bond,Sable Energy,,Energy,US,USD,BB,BB,1,trading,44.49,11.19,0.45,250.0,,,senior_unsecured,0.007,0.065,7.809902342067917,79.97604457601378,44.49,,0.0,0.0
+P0227,cds,Atlas Foods,,Consumer Staples,JP,JPY,A,A,1,trading,190.58,5.0,0.6,80.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.08194781269425333
+P0228,term_loan,Aurora Retail,,Consumer Discretionary,TW,TWD,BBB,BBB,1,banking,164.98,4.11,0.25,104.0,164.98,0.0,senior_secured,0.0018,,0.0,0.0,164.98,,0.0,0.0
+P0229,revolver,Falcon Retail,,Consumer Discretionary,EU,EUR,B,B,1,banking,401.42,3.18,0.45,280.0,127.94,273.48,senior_unsecured,0.03,,0.0,0.0,127.94,,0.0,0.0
+P0230,corp_bond,American Tower Corporation,AMT,Real Estate,US,USD,BB,BB,1,trading,38.19,2.16,0.21874999999999997,250.0,,,senior_secured,0.007,0.065,1.95271666941665,5.708277365313234,38.19,,0.0,0.0
+P0231,corp_bond,Atlas Energy,,Energy,EU,EUR,A,A,1,trading,60.15,2.69,0.25,80.0,,,senior_secured,0.0006,0.035,2.525335513751628,8.91750676362724,60.15,,0.0,0.0
+P0232,term_loan,Atlas Energy,,Energy,EU,EUR,A,A,1,banking,72.2,6.61,0.75,64.0,72.2,0.0,subordinated,0.0006,,0.0,0.0,72.2,,0.0,0.0
+P0233,corp_bond,AbbVie Inc.,ABBV,Health Care,US,USD,A,A,1,trading,102.63,12.17,0.25,80.0,,,senior_secured,0.0006,0.05,9.012726487339819,103.1096418069778,102.63,,0.0,0.0
+P0234,term_loan,Crescent Energy,,Energy,EU,EUR,BB,BB,1,banking,24.9,5.05,0.45,200.0,24.9,0.0,senior_unsecured,0.007,,0.0,0.0,24.9,,0.0,0.0
+P0235,term_loan,Redwood Retail,,Consumer Discretionary,US,USD,A,A,1,banking,128.2,5.22,0.45,64.0,128.2,0.0,senior_unsecured,0.0006,,0.0,0.0,128.2,,0.0,0.0
+P0236,fx_forward,Dow Inc.,DOW,Materials,US,EUR,A,A,1,trading,170.87,0.76,0.45,0.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.0
+P0237,term_loan,Crescent Power,,Utilities,US,USD,BBB,BBB,1,banking,136.61,1.28,0.21874999999999997,104.0,136.61,0.0,senior_secured,0.0018,,0.0,0.0,136.61,,0.0,0.0
+P0238,revolver,Evergreen Power,,Utilities,US,USD,BB,BB,1,banking,427.86,1.92,0.45,175.0,84.81,343.05,senior_unsecured,0.007,,0.0,0.0,84.81,,0.0,0.0
+P0239,sovereign_bond,Government of JP,,Sovereign,JP,JPY,A,A,1,trading,854.82,8.39,0.4,0.0,,,senior_unsecured,0.0006,0.01,7.991178340808527,73.2275709725177,854.82,,0.0,0.0
+P0240,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,803.2,14.43,0.4,0.0,,,senior_unsecured,0.0002,0.04,10.78254539878624,145.74959145678613,803.2,,0.0,0.0
+P0241,corp_bond,Caterpillar Inc.,CAT,Industrials,US,USD,A,A,1,trading,66.8,4.09,0.45,80.0,,,senior_unsecured,0.0006,0.05,3.626505098315848,17.149061542084855,66.8,,0.0,0.0
+P0242,irs,Highgate Industries,,Industrials,EU,EUR,A,A,1,trading,112.05,16.09,0.45,0.0,,,,0.0006,0.025,13.1201234739984,205.14195875862438,0.0,,0.14700453339175845,0.0
+P0243,revolver,Exxon Mobil Corporation,XOM,Energy,US,USD,A,A,1,banking,190.64,4.16,0.45,56.0,41.96,148.69,senior_unsecured,0.0006,,0.0,0.0,41.96,,0.0,0.0
+P0244,corp_bond,Falcon Properties,,Real Estate,BR,USD,BB,BB,1,trading,129.37,7.59,0.39374999999999993,250.0,,,senior_unsecured,0.007,0.065,5.842939603470244,43.8089219784169,129.37,,0.0,0.0
+P0245,irs,Falcon Retail,,Consumer Discretionary,EU,EUR,B,B,1,trading,109.73,19.13,0.45,0.0,,,,0.03,0.025,15.059720239926746,273.6717812409977,0.0,,0.16525546780334047,0.0
+P0246,corp_bond,Tesla Inc.,TSLA,Consumer Discretionary,US,USD,BBB,BBB,1,trading,92.54,5.62,0.25,130.0,,,senior_secured,0.0018,0.055,4.729336258610205,28.451007956521472,92.54,,0.0,0.0
+P0247,corp_bond,Bluecrest Media,,Communication Services,US,USD,BBB,BBB,1,trading,22.74,13.58,0.25,130.0,,,senior_secured,0.0018,0.055,9.430193082900855,116.00073381868215,22.74,,0.0,0.0
+P0248,revolver,Summit Retail,,Consumer Discretionary,US,USD,A,A,1,banking,448.51,3.36,0.45,56.0,256.77,191.74,senior_unsecured,0.0006,,0.0,0.0,256.77,,0.0,0.0
+P0249,corp_bond,The Coca-Cola Company,KO,Consumer Staples,US,USD,A,A,1,trading,14.46,7.87,0.45,80.0,,,senior_unsecured,0.0006,0.05,6.380265525252274,50.89613190231988,14.46,,0.0,0.0
+P0250,revolver,Highgate Power,,Utilities,EU,EUR,B,B,1,banking,53.68,5.0,0.45,280.0,14.11,39.58,senior_unsecured,0.03,,0.0,0.0,14.11,,0.0,0.0
+P0251,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,909.95,20.94,0.4,0.0,,,senior_unsecured,0.0002,0.04,13.886888976212514,254.13668024685145,909.95,,0.0,0.0
+P0252,revolver,Walmart Inc.,WMT,Consumer Staples,US,USD,BB,BB,1,banking,408.59,5.0,0.45,175.0,107.55,301.04,senior_unsecured,0.007,,0.0,0.0,107.55,,0.0,0.0
+P0253,revolver,Walmart Inc.,WMT,Consumer Staples,US,USD,BB,BB,1,banking,208.3,4.72,0.45,175.0,114.63,93.68,senior_unsecured,0.007,,0.0,0.0,114.63,,0.0,0.0
+P0254,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,881.03,20.28,0.4,0.0,,,senior_unsecured,0.0002,0.04,13.672925046786771,244.45379024584327,881.03,,0.0,0.0
+P0255,corp_bond,Keystone Foods,,Consumer Staples,JP,JPY,A,A,1,trading,138.69,6.45,0.45,80.0,,,senior_unsecured,0.0006,0.02,5.996364373101944,43.0036831730437,138.69,,0.0,0.0
+P0256,term_loan,Dow Inc.,DOW,Materials,US,USD,A,A,1,banking,115.9,1.26,0.25,64.0,115.9,0.0,senior_secured,0.0006,,0.0,0.0,115.9,,0.0,0.0
+P0257,irs,Keystone Industries,,Industrials,US,USD,BBB,BBB,-1,trading,293.03,2.12,0.45,0.0,,,,0.0018,0.04,1.990299993769206,5.913014761938381,0.0,,-0.0583210949779743,0.0
+P0258,revolver,Bluecrest Power,,Utilities,US,USD,BB,BB,1,banking,467.73,1.57,0.45,175.0,241.95,225.78,senior_unsecured,0.007,,0.0,0.0,241.95,,0.0,0.0
+P0259,irs,Falcon Energy,,Energy,US,USD,A,A,1,trading,188.87,14.49,0.45,0.0,,,,0.0006,0.04,10.811486519178937,146.62168211985366,0.0,,0.20420147892433302,0.0
+P0260,irs,Northwind Properties,,Real Estate,US,USD,BB,BB,1,trading,122.97,5.16,0.45,0.0,,,,0.007,0.04,4.577767460561029,26.334127728035487,0.0,,0.056295037531561974,0.0
+P0261,revolver,Highgate Power,,Utilities,EU,EUR,B,B,1,banking,361.95,3.16,0.45,280.0,124.92,237.03,senior_unsecured,0.03,,0.0,0.0,124.92,,0.0,0.0
+P0262,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,620.8,28.41,0.4,0.0,,,senior_unsecured,0.0002,0.04,16.656941301539067,386.8968390988196,620.8,,0.0,0.0
+P0263,term_loan,Pioneer Ridge Properties,,Real Estate,BR,BRL,BB,BB,1,banking,225.33,1.68,0.39374999999999993,200.0,225.33,0.0,senior_unsecured,0.007,,0.0,0.0,225.33,,0.0,0.0
+P0264,revolver,Atlas Health,,Health Care,US,USD,CCC,CCC,1,banking,369.92,5.0,0.45,630.0,217.74,152.18,senior_unsecured,0.25,,0.0,0.0,217.74,,0.0,0.0
+P0265,fx_forward,Sable Properties,,Real Estate,US,EUR,BBB,BBB,1,trading,87.59,1.02,0.45,0.0,,,,0.0018,,0.0,0.0,0.0,,0.0,0.0
+P0266,corp_bond,Copperleaf Energy,,Energy,US,USD,BB,BB,1,trading,141.91,5.21,0.45,250.0,,,senior_unsecured,0.007,0.065,4.309999635041105,23.999788412070235,141.91,,0.0,0.0
+P0267,corp_bond,Granite Properties,,Real Estate,US,USD,B,B,1,trading,135.19,11.57,0.21874999999999997,400.0,,,senior_secured,0.03,0.08,7.373039327628514,74.28840344316977,135.19,,0.0,0.0
+P0268,corp_bond,Falcon Media,,Communication Services,SA,USD,A,A,1,trading,122.74,12.17,0.45,80.0,,,senior_unsecured,0.0006,0.05,9.012726487339819,103.1096418069778,122.74,,0.0,0.0
+P0269,corp_bond,Keystone Industries,,Industrials,US,USD,BBB,BBB,1,trading,63.83,11.75,0.45,130.0,,,senior_unsecured,0.0018,0.055,8.506693920233122,93.07257072042266,63.83,,0.0,0.0
+P0270,corp_bond,Falcon Media,,Communication Services,SA,USD,A,A,1,trading,85.16,3.44,0.45,80.0,,,senior_unsecured,0.0006,0.05,3.089699399912124,12.795884176965236,85.16,,0.0,0.0
+P0271,revolver,Copperleaf Energy,,Energy,US,USD,BB,BB,1,banking,66.86,5.0,0.45,175.0,38.26,28.61,senior_unsecured,0.007,,0.0,0.0,38.26,,0.0,0.0
+P0272,term_loan,Copperleaf Energy,,Energy,US,USD,BB,BB,1,banking,141.23,5.92,0.25,200.0,141.23,0.0,senior_secured,0.007,,0.0,0.0,141.23,,0.0,0.0
+P0273,term_loan,Evergreen Industries,,Industrials,US,USD,BBB,BBB,1,banking,170.65,5.96,0.45,104.0,170.65,0.0,senior_unsecured,0.0018,,0.0,0.0,170.65,,0.0,0.0
+P0274,term_loan,Atlas Foods,,Consumer Staples,JP,JPY,A,A,1,banking,274.84,5.16,0.45,64.0,274.84,0.0,senior_unsecured,0.0006,,0.0,0.0,274.84,,0.0,0.0
+P0275,revolver,Alphabet Inc.,GOOGL,Communication Services,US,USD,AA,AA,1,banking,442.9,5.0,0.45,38.5,122.92,319.99,senior_unsecured,0.0002,,0.0,0.0,122.92,,0.0,0.0
+P0276,equity,Wells Fargo & Company,WFC,Financials,US,USD,BBB,BBB,1,trading,26.21,0.0,0.0,0.0,,,,0.0018,,0.0,0.0,26.21,,0.0,0.0
+P0277,revolver,Highgate Industries,,Industrials,EU,EUR,A,A,1,banking,242.13,5.0,0.45,56.0,93.0,149.13,senior_unsecured,0.0006,,0.0,0.0,93.0,,0.0,0.0
+P0278,revolver,Keystone Industries,,Industrials,US,USD,BBB,BBB,1,banking,389.02,3.16,0.45,91.0,130.29,258.74,senior_unsecured,0.0018,,0.0,0.0,130.29,,0.0,0.0
+P0279,revolver,Granite Properties,,Real Estate,US,USD,B,B,1,banking,453.81,4.34,0.45,280.0,106.06,347.76,senior_unsecured,0.03,,0.0,0.0,106.06,,0.0,0.0
+P0280,corp_bond,Atlas Media,,Communication Services,US,USD,BBB,BBB,1,trading,22.15,14.51,0.45,130.0,,,senior_unsecured,0.0018,0.055,9.866917320935032,127.99789384675259,22.15,,0.0,0.0
+P0281,cds,Caterpillar Inc.,CAT,Industrials,US,USD,A,A,-1,trading,167.73,5.0,0.6,80.0,,,,0.0006,,0.0,0.0,0.0,,0.0,-0.07212246303480836
+P0282,fx_forward,Highgate Industries,,Industrials,EU,EUR,A,A,-1,trading,287.42,1.55,0.45,0.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.0
+P0283,revolver,Bluecrest Capital,,Financials,US,USD,AA,AA,1,banking,224.7,4.61,0.45,38.5,86.69,138.01,senior_unsecured,0.0002,,0.0,0.0,86.69,,0.0,0.0
+P0284,term_loan,Walmart Inc.,WMT,Consumer Staples,US,USD,BB,BB,1,banking,226.41,5.96,0.75,200.0,226.41,0.0,subordinated,0.007,,0.0,0.0,226.41,,0.0,0.0
+P0285,fx_forward,Pioneer Ridge Industries,,Industrials,EU,EUR,BBB,BBB,1,trading,396.33,1.06,0.45,0.0,,,,0.0018,,0.0,0.0,0.0,,0.0,0.0
+P0286,corp_bond,Aurora Materials,,Materials,IN,INR,BBB,BBB,1,trading,14.93,5.78,0.45,130.0,,,senior_unsecured,0.0018,0.08,4.487921306242355,26.42488209413402,14.93,,0.0,0.0
+P0287,corp_bond,Harbor Health,,Health Care,US,USD,BB,BB,1,trading,125.23,5.18,0.45,250.0,,,senior_unsecured,0.007,0.065,4.290041698076982,23.78430470179318,125.23,,0.0,0.0
+P0288,term_loan,Highgate Industries,,Industrials,EU,EUR,A,A,1,banking,203.09,4.32,0.25,64.0,203.09,0.0,senior_secured,0.0006,,0.0,0.0,203.09,,0.0,0.0
+P0289,fx_forward,Atlas Media,,Communication Services,US,MXN,BBB,BBB,1,trading,385.52,1.36,0.45,0.0,,,,0.0018,,0.0,0.0,0.0,,0.0,0.0
+P0290,term_loan,Granite Foods,,Consumer Staples,EU,EUR,AA,AA,1,banking,154.17,6.39,0.45,44.0,154.17,0.0,senior_unsecured,0.0002,,0.0,0.0,154.17,,0.0,0.0
+P0291,corp_bond,Northwind Properties,,Real Estate,US,USD,BB,BB,1,trading,116.99,5.97,0.21874999999999997,250.0,,,senior_secured,0.007,0.065,4.808224705064219,29.765229013466513,116.99,,0.0,0.0
+P0292,term_loan,Bluecrest Capital,,Financials,US,USD,AA,AA,1,banking,60.82,3.98,0.50625,44.0,60.82,0.0,senior_unsecured,0.0002,,0.0,0.0,60.82,,0.0,0.0
+P0293,revolver,Exxon Mobil Corporation,XOM,Energy,US,USD,A,A,1,banking,166.9,1.87,0.45,56.0,83.5,83.4,senior_unsecured,0.0006,,0.0,0.0,83.5,,0.0,0.0
+P0294,irs,Aurora Materials,,Materials,IN,USD,BBB,BBB,-1,trading,141.85,10.01,0.45,0.0,,,,0.0018,0.04,8.126873010880105,80.93660190225724,0.0,,-0.11527876761804191,0.0
+P0295,irs,Caterpillar Inc.,CAT,Industrials,US,USD,A,A,-1,trading,90.49,8.85,0.45,0.0,,,,0.0006,0.04,7.310797530458645,65.5445431430223,0.0,,-0.0661535136613548,0.0
+P0296,revolver,Tesla Inc.,TSLA,Consumer Discretionary,US,USD,BBB,BBB,1,banking,343.13,5.0,0.45,91.0,201.63,141.5,senior_unsecured,0.0018,,0.0,0.0,201.63,,0.0,0.0
+P0297,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,818.99,9.25,0.4,0.0,,,senior_unsecured,0.0002,0.04,7.60472761686375,70.82224886862966,818.99,,0.0,0.0
+P0298,revolver,Bluecrest Power,,Utilities,US,USD,BB,BB,1,banking,319.46,5.0,0.45,175.0,112.9,206.56,senior_unsecured,0.007,,0.0,0.0,112.9,,0.0,0.0
+P0299,revolver,Sterling Industries,,Industrials,US,USD,BBB,BBB,1,banking,58.35,5.0,0.45,91.0,12.79,45.56,senior_unsecured,0.0018,,0.0,0.0,12.79,,0.0,0.0
+P0300,corp_bond,Falcon Media,,Communication Services,SA,USD,A,A,1,trading,13.35,5.88,0.25,80.0,,,senior_secured,0.0006,0.05,4.988957540417512,31.390133674246467,13.35,,0.0,0.0
+P0301,term_loan,Aurora Retail,,Consumer Discretionary,TW,USD,BBB,BBB,1,banking,81.65,3.3,0.45,104.0,81.65,0.0,senior_unsecured,0.0018,,0.0,0.0,81.65,,0.0,0.0
+P0302,term_loan,Vertex Energy,,Energy,US,USD,BBB,BBB,1,banking,38.21,1.73,0.45,104.0,38.21,0.0,senior_unsecured,0.0018,,0.0,0.0,38.21,,0.0,0.0
+P0303,sovereign_bond,Government of JP,,Sovereign,JP,JPY,A,A,1,trading,607.58,16.12,0.4,0.0,,,senior_unsecured,0.0006,0.01,14.777173634428962,243.66638065135982,607.58,,0.0,0.0
+P0304,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,183.46,6.83,0.4,0.0,,,senior_unsecured,0.0002,0.04,5.860496700075426,42.34766042199485,183.46,,0.0,0.0
+P0305,term_loan,Atlas Foods,,Consumer Staples,JP,JPY,A,A,1,banking,32.46,5.78,0.45,64.0,32.46,0.0,senior_unsecured,0.0006,,0.0,0.0,32.46,,0.0,0.0
+P0306,sovereign_bond,Government of EU,,Sovereign,EU,EUR,AA,AA,1,trading,592.58,24.72,0.4,0.0,,,senior_unsecured,0.0002,0.025,18.21554649542295,412.05982740751716,592.58,,0.0,0.0
+P0307,irs,AbbVie Inc.,ABBV,Health Care,US,USD,A,A,-1,trading,201.11,8.42,0.45,0.0,,,,0.0006,0.04,7.023277788500155,60.42622280466744,0.0,,-0.14124812834301617,0.0
+P0308,revolver,Copperleaf Foods,,Consumer Staples,US,USD,BBB,BBB,1,banking,168.13,3.88,0.45,91.0,81.15,86.98,senior_unsecured,0.0018,,0.0,0.0,81.15,,0.0,0.0
+P0309,term_loan,Nike Inc.,NKE,Consumer Discretionary,US,USD,AAA,AAA,1,banking,299.15,1.08,0.25,32.0,299.15,0.0,senior_secured,0.0001,,0.0,0.0,299.15,,0.0,0.0
+P0310,corp_bond,Keystone Energy,,Energy,US,USD,CCC,CCC,1,trading,39.23,7.23,0.45,900.0,,,senior_unsecured,0.25,0.13,4.568413321863626,29.23772383292159,39.23,,0.0,0.0
+P0311,term_loan,Redwood Materials,,Materials,US,USD,AAA,AAA,1,banking,254.45,1.23,0.45,32.0,254.45,0.0,senior_unsecured,0.0001,,0.0,0.0,254.45,,0.0,0.0
+P0312,corp_bond,Northwind Properties,,Real Estate,US,USD,BB,BB,1,trading,42.75,4.38,0.39374999999999993,250.0,,,senior_unsecured,0.007,0.065,3.7068647880986845,18.025090600350705,42.75,,0.0,0.0
+P0313,revolver,Evergreen Power,,Utilities,US,USD,BB,BB,1,banking,51.47,5.0,0.45,175.0,25.37,26.09,senior_unsecured,0.007,,0.0,0.0,25.37,,0.0,0.0
+P0314,corp_bond,Pioneer Ridge Properties,,Real Estate,BR,BRL,BB,BB,1,trading,104.24,6.08,0.21874999999999997,250.0,,,senior_secured,0.007,0.145,3.9472437489398144,21.83647990715444,104.24,,0.0,0.0
+P0315,term_loan,Keystone Materials,,Materials,US,USD,BB,BB,1,banking,139.53,2.26,0.45,200.0,139.53,0.0,senior_unsecured,0.007,,0.0,0.0,139.53,,0.0,0.0
+P0316,revolver,Vertex Energy,,Energy,US,USD,BBB,BBB,1,banking,130.77,1.52,0.45,91.0,63.18,67.58,senior_unsecured,0.0018,,0.0,0.0,63.18,,0.0,0.0
+P0317,corp_bond,Exxon Mobil Corporation,XOM,Energy,US,USD,A,A,1,trading,112.75,9.89,0.45,80.0,,,senior_unsecured,0.0006,0.05,7.660305308232539,73.73723233528267,112.75,,0.0,0.0
+P0318,corp_bond,Highgate Properties,,Real Estate,EU,EUR,B,B,1,trading,47.77,7.83,0.39374999999999993,400.0,,,senior_unsecured,0.03,0.065,5.985209786566157,46.03581051560154,47.77,,0.0,0.0
+P0319,term_loan,The Coca-Cola Company,KO,Consumer Staples,US,USD,A,A,1,banking,202.64,1.64,0.25,64.0,202.64,0.0,senior_secured,0.0006,,0.0,0.0,202.64,,0.0,0.0
+P0320,equity,Caterpillar Inc.,CAT,Industrials,US,USD,A,A,1,trading,24.53,0.0,0.0,0.0,,,,0.0006,,0.0,0.0,24.53,,0.0,0.0
+P0321,term_loan,Redwood Systems,,Information Technology,BR,USD,BB,BB,1,banking,274.44,1.24,0.75,200.0,274.44,0.0,subordinated,0.007,,0.0,0.0,274.44,,0.0,0.0
+P0322,term_loan,Redwood Systems,,Information Technology,BR,USD,BB,BB,1,banking,250.96,5.35,0.25,200.0,250.96,0.0,senior_secured,0.007,,0.0,0.0,250.96,,0.0,0.0
+P0323,term_loan,Merck & Co. Inc.,MRK,Health Care,US,USD,A,A,1,banking,265.53,4.74,0.25,64.0,265.53,0.0,senior_secured,0.0006,,0.0,0.0,265.53,,0.0,0.0
+P0324,term_loan,Keystone Power,,Utilities,US,USD,BBB,BBB,1,banking,26.34,3.88,0.21874999999999997,104.0,26.34,0.0,senior_secured,0.0018,,0.0,0.0,26.34,,0.0,0.0
+P0325,revolver,Walmart Inc.,WMT,Consumer Staples,US,USD,BB,BB,1,banking,385.62,1.28,0.45,175.0,171.9,213.72,senior_unsecured,0.007,,0.0,0.0,171.9,,0.0,0.0
+P0326,sovereign_bond,Government of GB,,Sovereign,GB,GBP,AA,AA,1,trading,401.94,15.61,0.4,0.0,,,senior_unsecured,0.0002,0.045,11.14537472653873,159.03382513067098,401.94,,0.0,0.0
+P0327,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,865.69,22.54,0.4,0.0,,,senior_unsecured,0.0002,0.04,14.582289155034964,283.3160139339228,865.69,,0.0,0.0
+P0328,term_loan,Atlas Energy,,Energy,EU,EUR,A,A,1,banking,181.28,4.47,0.45,64.0,181.28,0.0,senior_unsecured,0.0006,,0.0,0.0,181.28,,0.0,0.0
+P0329,term_loan,Bluecrest Media,,Communication Services,US,USD,BBB,BBB,1,banking,159.08,2.98,0.45,104.0,159.08,0.0,senior_unsecured,0.0018,,0.0,0.0,159.08,,0.0,0.0
+P0330,term_loan,Evergreen Industries,,Industrials,US,USD,BBB,BBB,1,banking,80.54,4.97,0.45,104.0,80.54,0.0,senior_unsecured,0.0018,,0.0,0.0,80.54,,0.0,0.0
+P0331,sovereign_bond,Government of IN,,Sovereign,IN,INR,BBB,BBB,1,trading,745.15,22.75,0.4,104.0,,,senior_unsecured,0.0018,0.07,11.387517627930714,194.67902672743335,745.15,,0.0,0.0
+P0332,revolver,NVIDIA Corporation,NVDA,Information Technology,US,USD,BBB,BBB,1,banking,259.37,1.62,0.45,91.0,137.86,121.52,senior_unsecured,0.0018,,0.0,0.0,137.86,,0.0,0.0
+P0333,cds,Keystone Materials,,Materials,US,USD,BB,BB,-1,trading,51.27,5.0,0.6,250.0,,,,0.007,,0.0,0.0,0.0,,0.0,-0.022044024386756317
+P0334,corp_bond,Redwood Industries,,Industrials,MX,USD,BBB,BBB,1,trading,107.44,6.13,0.25,130.0,,,senior_secured,0.0018,0.055,5.10914830988038,32.99847778325867,107.44,,0.0,0.0
+P0335,corp_bond,Northwind Properties,,Real Estate,US,USD,BB,BB,1,trading,62.49,8.22,0.21874999999999997,250.0,,,senior_secured,0.007,0.065,6.235913181975643,49.91562007114914,62.49,,0.0,0.0
+P0336,sovereign_bond,Government of JP,,Sovereign,JP,JPY,A,A,1,trading,405.41,25.37,0.4,0.0,,,senior_unsecured,0.0006,0.01,22.19959362441464,554.6569471748257,405.41,,0.0,0.0
+P0337,sovereign_bond,Government of IN,,Sovereign,IN,INR,BBB,BBB,1,trading,589.64,22.26,0.4,104.0,,,senior_unsecured,0.0018,0.07,11.353013111889569,192.06941856980012,589.64,,0.0,0.0
+P0338,revolver,Granite Foods,,Consumer Staples,EU,EUR,AA,AA,1,banking,410.1,5.0,0.45,38.5,70.22,339.88,senior_unsecured,0.0002,,0.0,0.0,70.22,,0.0,0.0
+P0339,term_loan,NVIDIA Corporation,NVDA,Information Technology,US,USD,BBB,BBB,1,banking,61.68,5.58,0.45,104.0,61.68,0.0,senior_unsecured,0.0018,,0.0,0.0,61.68,,0.0,0.0
+P0340,revolver,American Tower Corporation,AMT,Real Estate,US,USD,BB,BB,1,banking,497.74,3.08,0.45,175.0,237.07,260.67,senior_unsecured,0.007,,0.0,0.0,237.07,,0.0,0.0
+P0341,revolver,Pioneer Ridge Properties,,Real Estate,BR,BRL,BB,BB,1,banking,333.25,1.53,0.45,175.0,162.21,171.04,senior_unsecured,0.007,,0.0,0.0,162.21,,0.0,0.0
+P0342,term_loan,Silverline Health,,Health Care,IN,USD,B,B,1,banking,103.13,6.63,0.25,320.0,103.13,0.0,senior_secured,0.03,,0.0,0.0,103.13,,0.0,0.0
+P0343,revolver,Dow Inc.,DOW,Materials,US,USD,A,A,1,banking,437.36,1.93,0.45,56.0,197.62,239.74,senior_unsecured,0.0006,,0.0,0.0,197.62,,0.0,0.0
+P0344,corp_bond,Evergreen Properties,,Real Estate,US,USD,BBB,BBB,1,trading,85.13,8.59,0.39374999999999993,130.0,,,senior_unsecured,0.0018,0.055,6.719541259885709,56.99564409710028,85.13,,0.0,0.0
+P0345,term_loan,Summit Retail,,Consumer Discretionary,US,USD,A,A,1,banking,64.95,6.41,0.45,64.0,64.95,0.0,senior_unsecured,0.0006,,0.0,0.0,64.95,,0.0,0.0
+P0346,term_loan,Falcon Retail,,Consumer Discretionary,EU,EUR,B,B,1,banking,71.48,2.65,0.45,320.0,71.48,0.0,senior_unsecured,0.03,,0.0,0.0,71.48,,0.0,0.0
+P0347,term_loan,Falcon Properties,,Real Estate,BR,USD,BB,BB,1,banking,47.58,2.45,0.21874999999999997,200.0,47.58,0.0,senior_secured,0.007,,0.0,0.0,47.58,,0.0,0.0
+P0348,term_loan,The Coca-Cola Company,KO,Consumer Staples,US,USD,A,A,1,banking,26.05,5.64,0.25,64.0,26.05,0.0,senior_secured,0.0006,,0.0,0.0,26.05,,0.0,0.0
+P0349,equity,Exxon Mobil Corporation,XOM,Energy,US,USD,A,A,1,trading,30.58,0.0,0.0,0.0,,,,0.0006,,0.0,0.0,30.58,,0.0,0.0
+P0350,term_loan,Vertex Energy,,Energy,US,USD,BBB,BBB,1,banking,67.52,6.1,0.75,104.0,67.52,0.0,subordinated,0.0018,,0.0,0.0,67.52,,0.0,0.0
+P0351,term_loan,Highgate Power,,Utilities,EU,EUR,B,B,1,banking,67.78,3.71,0.39374999999999993,320.0,67.78,0.0,senior_unsecured,0.03,,0.0,0.0,67.78,,0.0,0.0
+P0352,term_loan,Crescent Power,,Utilities,US,USD,BBB,BBB,1,banking,129.63,6.26,0.6562499999999999,104.0,129.63,0.0,subordinated,0.0018,,0.0,0.0,129.63,,0.0,0.0
+P0353,revolver,Silverline Health,,Health Care,IN,INR,B,B,1,banking,280.13,5.0,0.45,280.0,59.57,220.56,senior_unsecured,0.03,,0.0,0.0,59.57,,0.0,0.0
+P0354,term_loan,Highgate Power,,Utilities,EU,EUR,B,B,1,banking,118.71,3.89,0.39374999999999993,320.0,118.71,0.0,senior_unsecured,0.03,,0.0,0.0,118.71,,0.0,0.0
+P0355,revolver,Harbor Retail,,Consumer Discretionary,US,USD,B,B,1,banking,72.42,2.78,0.45,280.0,16.48,55.94,senior_unsecured,0.03,,0.0,0.0,16.48,,0.0,0.0
+P0356,term_loan,Evergreen Power,,Utilities,US,USD,BB,BB,1,banking,240.9,5.36,0.21874999999999997,200.0,240.9,0.0,senior_secured,0.007,,0.0,0.0,240.9,,0.0,0.0
+P0357,term_loan,Silverline Media,,Communication Services,GB,GBP,AA,AA,1,banking,81.85,4.57,0.25,44.0,81.85,0.0,senior_secured,0.0002,,0.0,0.0,81.85,,0.0,0.0
+P0358,irs,AbbVie Inc.,ABBV,Health Care,US,USD,A,A,-1,trading,172.93,19.47,0.45,0.0,,,,0.0006,0.04,13.295356780004887,229.85970062458227,0.0,,-0.2299188585074675,0.0
+P0359,term_loan,Vertex Health,,Health Care,BR,USD,A,A,1,banking,284.22,2.65,0.45,64.0,284.22,0.0,senior_unsecured,0.0006,,0.0,0.0,284.22,,0.0,0.0
+P0360,corp_bond,Pioneer Ridge Power,,Utilities,EU,EUR,BB,BB,1,trading,50.41,14.77,0.39374999999999993,250.0,,,senior_unsecured,0.007,0.05,10.258945760975067,136.8453306754022,50.41,,0.0,0.0
+P0361,revolver,Sterling Industries,,Industrials,US,USD,BBB,BBB,1,banking,135.4,1.66,0.45,91.0,65.28,70.13,senior_unsecured,0.0018,,0.0,0.0,65.28,,0.0,0.0
+P0362,revolver,Wells Fargo & Company,WFC,Financials,US,USD,BBB,BBB,1,banking,136.25,3.3,0.45,91.0,71.55,64.7,senior_unsecured,0.0018,,0.0,0.0,71.55,,0.0,0.0
+P0363,irs,Dow Inc.,DOW,Materials,US,USD,A,A,1,trading,221.73,14.66,0.45,0.0,,,,0.0006,0.04,10.893100558660832,149.1023952185571,0.0,,0.2415310604857771,0.0
+P0364,term_loan,Summit Retail,,Consumer Discretionary,US,USD,A,A,1,banking,228.59,4.99,0.25,64.0,228.59,0.0,senior_secured,0.0006,,0.0,0.0,228.59,,0.0,0.0
+P0365,cds,Evergreen Power,,Utilities,US,USD,BB,BB,1,trading,37.64,5.0,0.6,250.0,,,,0.007,,0.0,0.0,0.0,,0.0,0.01618398976352086
+P0366,fx_forward,Evergreen Industries,,Industrials,US,BRL,BBB,BBB,-1,trading,54.18,1.18,0.45,0.0,,,,0.0018,,0.0,0.0,0.0,,0.0,0.0
+P0367,corp_bond,The Goldman Sachs Group Inc.,GS,Financials,US,USD,BBB,BBB,1,trading,123.05,3.24,0.50625,130.0,,,senior_unsecured,0.0018,0.055,2.8977944614590725,11.409169955154416,123.05,,0.0,0.0
+P0368,term_loan,Tesla Inc.,TSLA,Consumer Discretionary,US,USD,BBB,BBB,1,banking,176.8,5.68,0.25,104.0,176.8,0.0,senior_secured,0.0018,,0.0,0.0,176.8,,0.0,0.0
+P0369,corp_bond,Highgate Industries,,Industrials,EU,EUR,A,A,1,trading,105.48,6.37,0.25,80.0,,,senior_secured,0.0006,0.035,5.635915746306042,38.94218249829041,105.48,,0.0,0.0
+P0370,corp_bond,Merck & Co. Inc.,MRK,Health Care,US,USD,A,A,1,trading,51.6,14.8,0.25,80.0,,,senior_secured,0.0006,0.05,10.302239799763521,137.86509558782305,51.6,,0.0,0.0
+P0371,sovereign_bond,Government of US,,Sovereign,US,USD,AA,AA,1,trading,481.51,19.45,0.4,0.0,,,senior_unsecured,0.0002,0.04,13.288346598885175,229.5640712243466,481.51,,0.0,0.0
+P0372,term_loan,Highgate Properties,,Real Estate,EU,EUR,B,B,1,banking,227.1,1.62,0.21874999999999997,320.0,227.1,0.0,senior_secured,0.03,,0.0,0.0,227.1,,0.0,0.0
+P0373,cds,Alphabet Inc.,GOOGL,Communication Services,US,USD,AA,AA,1,trading,82.49,5.0,0.6,55.0,,,,0.0002,,0.0,0.0,0.0,,0.0,0.035470634199469935
+P0374,fx_forward,Falcon Energy,,Energy,US,MXN,A,A,1,trading,366.97,1.69,0.45,0.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.0
+P0375,term_loan,Bluecrest Media,,Communication Services,US,USD,BBB,BBB,1,banking,67.6,3.8,0.25,104.0,67.6,0.0,senior_secured,0.0018,,0.0,0.0,67.6,,0.0,0.0
+P0376,term_loan,Evergreen Power,,Utilities,US,USD,BB,BB,1,banking,136.02,4.76,0.6562499999999999,200.0,136.02,0.0,subordinated,0.007,,0.0,0.0,136.02,,0.0,0.0
+P0377,term_loan,Microsoft Corporation,MSFT,Information Technology,US,USD,BBB,BBB,1,banking,169.24,5.57,0.25,104.0,169.24,0.0,senior_secured,0.0018,,0.0,0.0,169.24,,0.0,0.0
+P0378,irs,Sterling Capital,,Financials,US,USD,BBB,BBB,1,trading,281.79,16.88,0.45,0.0,,,,0.0018,0.04,12.03416863929847,184.97783099407783,0.0,,0.33910515504177197,0.0
+P0379,fx_forward,Harbor Capital,,Financials,US,CNY,A,A,-1,trading,118.11,1.33,0.45,0.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.0
+P0380,equity,Nike Inc.,NKE,Consumer Discretionary,US,USD,AAA,AAA,1,trading,58.81,0.0,0.0,0.0,,,,0.0001,,0.0,0.0,58.81,,0.0,0.0
+P0381,corp_bond,Highgate Properties,,Real Estate,EU,EUR,B,B,1,trading,96.22,13.01,0.39374999999999993,400.0,,,senior_unsecured,0.03,0.065,8.678519945105585,100.31996644460509,96.22,,0.0,0.0
+P0382,corp_bond,Aurora Materials,,Materials,IN,USD,BBB,BBB,1,trading,47.47,7.05,0.45,130.0,,,senior_unsecured,0.0018,0.055,5.749029476098621,41.59361365316735,47.47,,0.0,0.0
+P0383,corp_bond,Keystone Power,,Utilities,US,USD,BBB,BBB,1,trading,132.29,2.33,0.21874999999999997,130.0,,,senior_secured,0.0018,0.055,2.1299314317714826,6.6342242648349865,132.29,,0.0,0.0
+P0384,corp_bond,Harbor Capital,,Financials,US,USD,A,A,1,trading,46.17,14.58,0.50625,80.0,,,senior_unsecured,0.0006,0.05,10.216003400245953,135.17656912756635,46.17,,0.0,0.0
+P0385,cds,Caterpillar Inc.,CAT,Industrials,US,USD,A,A,1,trading,48.84,5.0,0.6,80.0,,,,0.0006,,0.0,0.0,0.0,,0.0,0.020999185080594295
+P0386,corp_bond,Evergreen Power,,Utilities,US,USD,BB,BB,1,trading,108.96,6.89,0.39374999999999993,250.0,,,senior_unsecured,0.007,0.065,5.402142618965485,37.471506218209555,108.96,,0.0,0.0
+P0387,term_loan,Atlas Energy,,Energy,EU,EUR,A,A,1,banking,56.45,2.77,0.45,64.0,56.45,0.0,senior_unsecured,0.0006,,0.0,0.0,56.45,,0.0,0.0
+P0388,corp_bond,Crescent Power,,Utilities,US,USD,BBB,BBB,1,trading,134.77,10.88,0.21874999999999997,130.0,,,senior_secured,0.0018,0.055,8.034543912271324,82.5639614888096,134.77,,0.0,0.0
+P0389,term_loan,Microsoft Corporation,MSFT,Information Technology,US,USD,BBB,BBB,1,banking,119.19,2.17,0.45,104.0,119.19,0.0,senior_unsecured,0.0018,,0.0,0.0,119.19,,0.0,0.0
+P0390,sovereign_bond,Government of MX,,Sovereign,MX,MXN,BBB,BBB,1,trading,997.3,9.58,0.4,104.0,,,senior_unsecured,0.0018,0.095,6.15387009532418,51.97861750662335,997.3,,0.0,0.0
+P0391,corp_bond,Keystone Foods,,Consumer Staples,JP,JPY,A,A,1,trading,75.11,8.0,0.45,80.0,,,senior_unsecured,0.0006,0.02,7.325481440494422,63.143931351315544,75.11,,0.0,0.0
+P0392,revolver,Vertex Energy,,Energy,US,USD,BBB,BBB,1,banking,363.19,5.0,0.45,91.0,188.96,174.22,senior_unsecured,0.0018,,0.0,0.0,188.96,,0.0,0.0
+P0393,irs,Pioneer Ridge Properties,,Real Estate,BR,BRL,BB,BB,-1,trading,284.16,10.49,0.45,0.0,,,,0.007,0.12,5.858287010350625,49.84635162457544,0.0,,-0.16646714272527094,0.0
+P0394,sovereign_bond,Government of IN,,Sovereign,IN,INR,BBB,BBB,1,trading,909.06,12.91,0.4,104.0,,,senior_unsecured,0.0018,0.07,8.379639333863638,94.84559339673773,909.06,,0.0,0.0
+P0395,term_loan,Lakeshore Energy,,Energy,US,USD,BBB,BBB,1,banking,258.39,5.73,0.45,104.0,258.39,0.0,senior_unsecured,0.0018,,0.0,0.0,258.39,,0.0,0.0
+P0396,term_loan,Harbor Health,,Health Care,US,USD,BB,BB,1,banking,87.28,2.72,0.25,200.0,87.28,0.0,senior_secured,0.007,,0.0,0.0,87.28,,0.0,0.0
+P0397,term_loan,Highgate Industries,,Industrials,EU,EUR,A,A,1,banking,264.87,3.2,0.75,64.0,264.87,0.0,subordinated,0.0006,,0.0,0.0,264.87,,0.0,0.0
+P0398,term_loan,Pioneer Ridge Power,,Utilities,EU,EUR,BB,BB,1,banking,178.61,3.69,0.21874999999999997,200.0,178.61,0.0,senior_secured,0.007,,0.0,0.0,178.61,,0.0,0.0
+P0399,term_loan,Sterling Capital,,Financials,US,USD,BBB,BBB,1,banking,92.82,2.6,0.28125,104.0,92.82,0.0,senior_secured,0.0018,,0.0,0.0,92.82,,0.0,0.0
+H-USD-5Y,irs,ALM hedge (cleared),,Treasury/ALM,US,USD,AA,AA,1,trading,13681.28,5.0,0.45,0.0,,0.0,,0.0002,0.042,4.426920172338881,24.792251885946367,0.0,0.729,6.056593441541649,0.0
+H-USD-10Y,irs,ALM hedge (cleared),,Treasury/ALM,US,USD,AA,AA,1,trading,11312.64,10.0,0.45,0.0,,0.0,,0.0002,0.042,8.030740211762803,79.5604693171199,0.0,0.729,9.084887294919636,0.0
+H-EUR-5Y,irs,ALM hedge (cleared),,Treasury/ALM,EU,EUR,AA,AA,1,trading,1430.95,5.0,0.45,0.0,,0.0,,0.0002,0.026000000000000002,4.632484861997563,26.627118043873335,0.0,0.625,0.6628854213275414,0.0
+H-EUR-10Y,irs,ALM hedge (cleared),,Treasury/ALM,EU,EUR,AA,AA,1,trading,1141.99,10.0,0.45,0.0,,0.0,,0.0002,0.026000000000000002,8.707011908082574,89.7598825756628,0.0,0.625,0.994332052891122,0.0
+H-GBP-5Y,irs,ALM hedge (cleared),,Treasury/ALM,GB,GBP,AA,AA,1,trading,1641.71,5.0,0.45,0.0,,0.0,,0.0002,0.043,4.414551366534431,24.683075167799203,0.0,0.795,0.7247413123953241,0.0
+H-GBP-10Y,irs,ALM hedge (cleared),,Treasury/ALM,GB,GBP,AA,AA,1,trading,1360.41,10.0,0.45,0.0,,0.0,,0.0002,0.043,7.991107391054709,78.97171339488436,0.0,0.795,1.0871182405864739,0.0
+H-JPY-5Y,irs,ALM hedge (cleared),,Treasury/ALM,JP,JPY,AA,AA,1,trading,1502.73,5.0,0.45,0.0,,0.0,,0.0002,0.012,4.82492160144922,28.37878075651584,0.0,0.644,0.7250554438145786,0.0
+H-JPY-10Y,irs,ALM hedge (cleared),,Treasury/ALM,JP,JPY,AA,AA,1,trading,1160.65,10.0,0.45,0.0,,0.0,,0.0002,0.012,9.370484781376867,100.0310890182166,0.0,0.644,1.0875853161505062,0.0
