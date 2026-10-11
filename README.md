@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Candidate Name** | Naman Karwa |
-| **College Email ID** | namankarwa311@gmail.com |
+| **College Email ID** | n.karwa@iitg.ac.in|
 | **College / Campus** | Indian Institute of Technology Guwahati |
 | **Demo Video Link** | [YouTube, unlisted: link to be added] |
 | **Slide Deck** | [docs/presentation.pdf](docs/presentation.pdf) |
